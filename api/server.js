@@ -1,5 +1,6 @@
 var express = require('express');
 var multer = require('multer');
+var fake = require('./fake');
 var repository = require('./repository');
 var app = express();
 
@@ -44,17 +45,36 @@ app.route('/composer/create-new-story')
   });
 
   app.get('/editor/get-stories-by-activity-id', function(req, res){
-    if (!req.query.activity_id) res.send({failure: 'activity_id was not send'});
+    if (!req.query.activity_id) {
+      res.send({failure: 'activity_id was not send'});
+      return;
+    }
     var activity_id = req.query.activity_id;
     //call the database to retrieve stories with matched_activities._id == activity_id
-    var response = fake.apiHelper('stories-by-activity', {activity_id});
+    var response = fake.apiHelper('stories-by-activity', {activity_id: activity_id});
     if(response.err){
-      console.log(err);
-      res.send(err);
+      console.log(response.err);
+      res.send(response.err);
     } else {
       res.send(response);
     }
   });
+
+  app.route('/editor/get-story-by-id')
+    .get(function(req, res){
+      var story_id = req.query.story_id;
+      if (!story_id) {
+        res.send({failure: 'story_id was not send'});
+        return;
+      }
+      var response = fake.apiHelper('story-by-id', {story_id: story_id});
+      if(response.err) {
+        console.log(response.err);
+        res.send(response.err);
+      } else {
+        res.send(response);
+      }
+    });
 
 app.listen(3000);
 
