@@ -1,0 +1,1 @@
+"use strict";$(document).ready(function(){}),$(window).load(function(){}),$(document).ready(function(){var n=$(window).width();n>560&&$(window).scroll(function(){})}),$(window).resize(function(){var n=$(window).width();n>560&&$(window).scroll(function(){})});

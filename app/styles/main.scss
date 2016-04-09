@@ -1,0 +1,20 @@
+$icon-font-path: '../fonts/';
+
+@import "bower_components/bourbon/app/assets/stylesheets/bourbon";
+
+@import "materialize";
+
+/*-----------------------------------------------------------------------------------*/
+/* GENERAL
+/*-----------------------------------------------------------------------------------*/
+
+body {
+  font-size: 16px;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
