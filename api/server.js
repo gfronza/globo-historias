@@ -76,6 +76,23 @@ app.route('/composer/create-new-story')
       }
     });
 
+  app.route('/widget/get-stories-by-activity-id')
+    .get(function(req, res){
+      var activity_id = req.query.activity_id;
+      if (!activity_id) {
+        res.send({failure: 'activity_id was not send'});
+        return;
+      }
+      // var response = fake.apiHelper('widget-stories-by-activity', {activity_id: activity_id});
+      var response = fake.apiHelper('stories-by-activity', {activity_id: activity_id});
+      if(response.err) {
+        console.log(response.err);
+        res.send(response.err);
+      } else {
+        res.send(response);
+      }
+    });
+
 app.listen(3000);
 
 console.log("Server is running on port 3000");
