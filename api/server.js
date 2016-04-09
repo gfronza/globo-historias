@@ -149,10 +149,30 @@ app.route('/composer/create-new-story')
         var story_id = req.body.story_id;
         if(!activity_id || !story_id){
           var failure = 'activity_id or story_id was not sent';
-          console.log('activity_id or story_id was not sent')
+          console.log('activity_id or story_id was not sent');
           res.send(failure);
         } else {
           var response = repository.denyStoryForActivity(activity_id, story_id);
+          if(response.err){
+            console.log(response.err);
+            res.send(response.err);
+          } else {
+            res.send(response);
+          }
+        }
+      });
+
+  app.route('/widget/react-to-story-for-activity')
+      .post(urlencodedParser, function(req, res) {
+        var activity_id = req.body.activity_id;
+        var story_id = req.body.story_id;
+        var reaction = req.body.reaction;
+        if(!activity_id || !story_id || !reaction){
+          var failure = 'activity_id or story_id or reaction was not sent';
+          console.log('activity_id or story_id or reaction was not sent');
+          res.send(failure);
+        } else {
+          var response = repository.reactToStoryForActivity(activity_id, story_id, reaction);
           if(response.err){
             console.log(response.err);
             res.send(response.err);
