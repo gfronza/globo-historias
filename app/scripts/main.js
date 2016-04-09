@@ -1,6 +1,6 @@
 // toggle visibility for css3 animations 
 $(document).ready(function () {
-
+  $(".button-collapse").sideNav();
 });
 
 

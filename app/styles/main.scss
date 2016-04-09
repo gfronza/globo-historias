@@ -18,3 +18,21 @@ body {
 .icon-block .material-icons {
   font-size: inherit;
 }
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.brand-logo {
+  img {
+    margin: 5px 0;
+    width: auto;
+    height: 50px;
+  }
+}
+
+.button-collapse {
+  padding: 0 15px;
+}
