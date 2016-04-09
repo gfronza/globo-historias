@@ -15,6 +15,9 @@ var storage = multer.diskStorage({
 
 var storyVideoUpload = multer({ storage : storage}).single('storyVideo');
 
+// TODO: use nginx to serve static content.
+app.use('/videos', express.static('storage'));
+
 app.route('/composer/create-new-story')
     .post(function(req, res) {
         storyVideoUpload(req, res, function(err) {
