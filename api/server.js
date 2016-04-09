@@ -2,7 +2,14 @@ var express = require('express');
 var multer = require('multer');
 var fake = require('./fake');
 var repository = require('./repository');
+var bodyParser = require('body-parser');
 var app = express();
+
+// create application/json parser
+var jsonParser = bodyParser.json()
+
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 var storage = multer.diskStorage({
   destination: function (req, file, callback) {
@@ -67,7 +74,7 @@ app.route('/composer/create-new-story')
     .get(function(req, res){
       var story_id = req.query.story_id;
       if (!story_id) {
-        res.send({failure: 'story_id was not send'});
+        res.send({failure: 'story_id was not sent'});
         return;
       }
       var response = fake.apiHelper('story-by-id', {story_id: story_id});
@@ -83,7 +90,7 @@ app.route('/composer/create-new-story')
     .get(function(req, res){
       var activity_id = req.query.activity_id;
       if (!activity_id) {
-        res.send({failure: 'activity_id was not send'});
+        res.send({failure: 'activity_id was not sent'});
         return;
       }
       // var response = fake.apiHelper('widget-stories-by-activity', {activity_id: activity_id});
@@ -95,6 +102,25 @@ app.route('/composer/create-new-story')
         res.send(response);
       }
     });
+
+  app.route('/editor/approve-story-for-activity')
+      .post(urlencodedParser, function(req, res) {
+        var activity_id = req.body.activity_id;
+        var story_id = req.body.story_id;
+        if(!activity_id || !story_id){
+          var failure = 'activity_id or story_id was not sent';
+          console.log('activity_id or story_id was not sent')
+          res.send(failure);
+        } else {
+          var response = repository.approveStoryForActivity(activity_id, story_id);
+          if(response.err){
+            console.log(response.err);
+            res.send(response.err);
+          } else {
+            res.send(response);
+          }
+        }
+      });
 
 app.listen(3000);
 
