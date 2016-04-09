@@ -5,6 +5,9 @@ var repository = require('./repository');
 var bodyParser = require('body-parser');
 var app = express();
 
+// TODO: use nginx to serve static content.
+app.use('/videos', express.static('storage'));
+
 // create application/json parser
 var jsonParser = bodyParser.json()
 
