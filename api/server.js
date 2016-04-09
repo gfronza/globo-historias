@@ -143,6 +143,25 @@ app.route('/composer/create-new-story')
         }
       });
 
+  app.route('/editor/deny-story-for-activity')
+      .post(urlencodedParser, function(req, res) {
+        var activity_id = req.body.activity_id;
+        var story_id = req.body.story_id;
+        if(!activity_id || !story_id){
+          var failure = 'activity_id or story_id was not sent';
+          console.log('activity_id or story_id was not sent')
+          res.send(failure);
+        } else {
+          var response = repository.denyStoryForActivity(activity_id, story_id);
+          if(response.err){
+            console.log(response.err);
+            res.send(response.err);
+          } else {
+            res.send(response);
+          }
+        }
+      });
+
 app.listen(3000);
 
 console.log("Server is running on port 3000");
