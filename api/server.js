@@ -1,5 +1,9 @@
 var express = require('express');
+var fileUpload = require('express-fileupload');
+var util = require('util');
 var app = express();
+
+app.use(fileUpload());
 
 app.route('/composer/create-new-story')
     .post(function(req, res) {
@@ -11,24 +15,27 @@ app.route('/composer/create-new-story')
     	}
 
         // TODO: extract constant.
-        videoStorageDir = '/Users/germano/Pessoal/MyDev/hackathon/hackathon-globo/storage/'
+        videoStorageDir = '/Users/germano/Pessoal/MyDev/hackathon/hackathon-globo/storage'
 
-        storyVideo = req.files.storyVideo;
-    	storyVideo.mv(videoStorageDir, function(err) {
+        var storyVideo = req.files.storyVideo;
+
+        // a very lame name for now.
+        var timestamp = new Date().getTime().toString(),
+            videoInStorage = util.format('%s/%s_%d', videoStorageDir, storyVideo.name, timestamp);
+
+    	storyVideo.mv(videoInStorage, function(err) {
     		if (err) {
-                story = repository.createStory(req.body);
-
-                res.json({
-                    ok: true,
-                });
-    		}
-    		else {
                 res.json({
                     error: 'Video could not be moved to the storage.'
                 });
-        		return;
+    		}
+    		else {
+                var story = repository.createStory(req.body);
+                res.json(story);
     		}
     	});
     });
 
 app.listen(3000);
+
+console.log("Server is running on port 3000");

@@ -1,4 +1,5 @@
 node_modules
+storage
 .tmp
 .sass-cache
 bower_components
