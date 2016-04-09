@@ -64,7 +64,7 @@ app.route('/composer/create-new-story')
     }
     var activity_id = req.query.activity_id;
     //call the database to retrieve stories with matched_activities._id == activity_id
-    var response = fake.apiHelper('stories-by-activity', {activity_id: activity_id});
+    var response = fake.apiHelper('stories-by-activity', {'activity_id': activity_id});
     if(response.err){
       console.log(response.err);
       res.send(response.err);
@@ -80,7 +80,7 @@ app.route('/composer/create-new-story')
         res.send({failure: 'story_id was not sent'});
         return;
       }
-      var response = fake.apiHelper('story-by-id', {story_id: story_id});
+      var response = fake.apiHelper('story-by-id', {'story_id': story_id});
       if(response.err) {
         console.log(response.err);
         res.send(response.err);
@@ -97,7 +97,7 @@ app.route('/composer/create-new-story')
         return;
       }
       // var response = fake.apiHelper('widget-stories-by-activity', {activity_id: activity_id});
-      var response = fake.apiHelper('stories-by-activity', {activity_id: activity_id});
+      var response = fake.apiHelper('stories-by-activity', {'activity_id': activity_id});
       if(response.err) {
         console.log(response.err);
         res.send(response.err);
