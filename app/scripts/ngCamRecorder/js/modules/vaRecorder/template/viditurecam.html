@@ -14,8 +14,7 @@
 
 			</div>
 			<div class="buttonssection">
-        <!-- ng-mousedown='startRecrodBut1()' ng-mouseup="stopRecBut1()" -->
-        <div class="hold_trigger virecbutton" ng-if="videoready" ngHold>Gravar</div>
+        <div class="hold_trigger virecbutton" ng-if="videoready" ng-mousedown='startRecrodBut1()' ng-mouseup="stopRecBut1()">Gravar</div>
 				<!-- <div class="virecbutton" ng-if="videoready"  ng-click="startRecrodBut1()"  >Start</div> -->
 				<!-- <div class="virecbutton"  ng-if="videoready" ng-click="stopRecBut1()" 	ng-class="recordingstarted ? 'videoisbeingrecorded' : '' " >Stop</div> -->
 				<div class="virecbutton" ng-if="videoready" ng-click="playback()" >Play</div>
