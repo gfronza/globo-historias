@@ -44,7 +44,7 @@ module.exports = {
                             var simpleActivities = [];
 
                             activities.forEach(function(act) {
-                                simpleActivities.push({'activity_id': new ObjectID(act._id), 'approved': false});
+                                simpleActivities.push({'activity_id': new ObjectID(act._id), 'approved': true});
                             });
 
                             if (simpleActivities.length > 0) {

@@ -96,8 +96,8 @@ app.controller("cameraCtrl" , ['$scope', function($scope){
                 recorvideodsize : 0.4,
                 webpquality     : 0.7,
                 framerate       : 15,
-                videoWidth      : '414px',
-                videoHeight     : '736px',
+                videoWidth      : 100,
+                videoHeight     : 100,
             },
 
             recfuncConf :{
