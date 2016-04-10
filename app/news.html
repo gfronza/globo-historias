@@ -96,7 +96,7 @@
                   <span class="chip" ng-repeat="tag in tags">{{::story.tag}}</span>
                 </p>
                 <small>
-                  <span><i class="fa fa-clock-o"></i> {{story.time_stamp}} 2 dias atrás</span>
+                  <span><i class="fa fa-clock-o"></i> {{days_from_today(story.time_stamp)}} 2 dias atrás</span>
                 </small>
 
                 <div class="reactions">
