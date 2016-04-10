@@ -1,4 +1,8 @@
 <?php
+require_once 'vendor/autoload.php';
+require_once 'classes/Parser.php';
+require_once 'classes/Activity.php';
+
 include 'header.php';
 ?>
 	  <nav class="light-blue lighten-1" role="navigation">
@@ -21,6 +25,8 @@ include 'header.php';
 	        	<h4>Moderação da aplicação</h4>
 	        </div>
 	       </div>
+
+
 
 	      <div class="row">
 	        <div class="col s12 m12 left">
@@ -58,125 +64,12 @@ include 'header.php';
 	        </div>
 	       </div>	       
 
-	      <!--   Icon Section   -->
-	      <div class="row">
-	        <div class="col s12 m6">
-	        	<div class="card-activity">
-	        		<div class="row valign-wrapper" style="margin-bottom:0px;">
-		        		<div class="col s12 m2 valign">
-		        			 <img src="img/g1.png" alt="" class="circle" width="40">
-		        		</div>
-		        		<div class="col s12 m5 valign">
-		        			<h6>Título da notícia</h6>
-		        		</div>
-		        		<div class="col s12 m5 valign">
-							<a href="#" class="open-modal">200 Histórias</a>	
-							<div class="divider"></div>
-							<a href="">05 Novas Histórias</a>
-		        		</div>
-	        		</div>	        			        		
-	        	</div>
-	        </div>
+	      <?php
+	     include 'view/noticias.php';
+	      ?>
+		      
 
-	        <div class="col s12 m6">
-	        	<div class="card-activity">
-	        		<div class="row valign-wrapper" style="margin-bottom:0px;">
-		        		<div class="col s12 m2 valign">
-		        			 <img src="img/techtudo.png" alt="" class="circle" width="40">
-		        		</div>
-		        		<div class="col s12 m5 valign">
-		        			<h6>Título da notícia</h6>
-		        		</div>
-		        		<div class="col s12 m5 valign">
-							<a href="" class="text-darken-2">200 Histórias</a>	
-							<div class="divider"></div>
-							<a href="">05 Novas Histórias</a>
-		        		</div>
-	        		</div>	        			        		
-	        	</div>
-	        </div>
-	      </div>
-
-	      <!--   Icon Section   -->
-	      <div class="row">
-	        <div class="col s12 m6">
-	        	<div class="card-activity">
-	        		<div class="row valign-wrapper" style="margin-bottom:0px;">
-		        		<div class="col s12 m2 valign">
-		        			 <img src="img/g1.png" alt="" class="circle" width="40">
-		        		</div>
-		        		<div class="col s12 m5 valign">
-		        			<h6>Título da notícia</h6>
-		        		</div>
-		        		<div class="col s12 m5 valign">
-							<a href="">200 Histórias</a>	
-							<div class="divider"></div>
-							<a href="">05 Novas Histórias</a>
-		        		</div>
-	        		</div>	        			        		
-	        	</div>
-	        </div>
-
-	        <div class="col s12 m6">
-	        	<div class="card-activity">
-	        		<div class="row valign-wrapper" style="margin-bottom:0px;">
-		        		<div class="col s12 m2 valign">
-		        			 <img src="img/techtudo.png" alt="" class="circle" width="40">
-		        		</div>
-		        		<div class="col s12 m5 valign">
-		        			<h6>Título da notícia</h6>
-		        		</div>
-		        		<div class="col s12 m5 valign">
-							<a href="" class="text-darken-2">200 Histórias</a>	
-							<div class="divider"></div>
-							<a href="">05 Novas Histórias</a>
-		        		</div>
-	        		</div>	        			        		
-	        	</div>
-	        </div>
-	      </div>
-
-
-	      <!--   Icon Section   -->
-	      <div class="row">
-	        <div class="col s12 m6">
-	        	<div class="card-activity">
-	        		<div class="row valign-wrapper" style="margin-bottom:0px;">
-		        		<div class="col s12 m2 valign">
-		        			 <img src="img/g1.png" alt="" class="circle" width="40">
-		        		</div>
-		        		<div class="col s12 m5 valign">
-		        			<h6>Título da notícia</h6>
-		        		</div>
-		        		<div class="col s12 m5 valign">
-							<a href="">200 Histórias</a>	
-							<div class="divider"></div>
-							<a href="">05 Novas Histórias</a>
-		        		</div>
-	        		</div>	        			        		
-	        	</div>
-	        </div>
-
-	        <div class="col s12 m6">
-	        	<div class="card-activity">
-	        		<div class="row valign-wrapper" style="margin-bottom:0px;">
-		        		<div class="col s12 m2 valign">
-		        			 <img src="img/techtudo.png" alt="" class="circle" width="40">
-		        		</div>
-		        		<div class="col s12 m5 valign">
-		        			<h6>Título da notícia</h6>
-		        		</div>
-		        		<div class="col s12 m5 valign">
-							<a href="" class="text-darken-2">200 Histórias</a>	
-							<div class="divider"></div>
-							<a href="">05 Novas Histórias</a>
-		        		</div>
-	        		</div>	        			        		
-	        	</div>
-	        </div>
-	      </div>	      
-
-
+	      <div id="media"></div>
 	    <br><br>
 
 	  </div>
@@ -185,6 +78,5 @@ include 'header.php';
 
 <?php
 
-include 'midia.php';
 include 'footer.php';
 ?>

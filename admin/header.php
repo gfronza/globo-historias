@@ -17,5 +17,6 @@
 		 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 		<LINK REL=StyleSheet HREF="css/style.css" TYPE="text/css" MEDIA=screen>
 		<script src="js/functions.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
 	</head>
 	<body>
