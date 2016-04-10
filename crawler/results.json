@@ -1,4 +1,5 @@
 [
+
   {
     "title": "Nos EUA, Marina Silva volta a defender cassação da chapa Dilma e Temer",
     "subtitle": "Ex-senadora falou a estudantes brasileiros em Chicago.\nPara ela, PT e PMDB 'são faces da mesma moeda'.",
@@ -12,8 +13,7 @@
   {
     "title": "Edinho diz que questionará na Justiça ex-presidente da Andrade Gutierrez ",
     "subtitle": "Assessoria da Andrade Gutierrez afirmou que não comentará o assunto.\nMinistro diz que se considera 'injustamente acusado de articular um conluio'. ",
-    "activity_url": "http://g1.globo.com/politica/noticia/2016/04/edinho-diz-que-questionara-na-justica-ex-presidente-da-andrade-gutierrez.html",
-    "image_url": "http://s3.glbimg.com/v1/AUTH_180b9dd048d9434295d27c4b6dadc248/media_kit/program/trademark/b060/b060f8a99b501aa1.svg"
+    "activity_url": "http://g1.globo.com/politica/noticia/2016/04/edinho-diz-que-questionara-na-justica-ex-presidente-da-andrade-gutierrez.html"
   },
   {
     "title": "Com agenda negativa, Planalto fica inseguro sobre impeachment ",
@@ -36,18 +36,163 @@
   {
     "title": "Horas após fim de sessão na Câmara, Dilma pedala em Brasília",
     "subtitle": "Presidente recebeu apoio de grupo na chegada ao Palácio da Alvorada.\nDiscussão da comissão de impeachment acabou às 4h43 deste sábado.",
-    "activity_url": "http://g1.globo.com/distrito-federal/noticia/2016/04/horas-apos-fim-de-sessao-na-camara-dilma-pedala-em-brasilia.html",
-    "image_url": "http://s3.glbimg.com/v1/AUTH_180b9dd048d9434295d27c4b6dadc248/media_kit/program/trademark/c86a/c86a920c12f288ed.svg"
+    "activity_url": "http://g1.globo.com/distrito-federal/noticia/2016/04/horas-apos-fim-de-sessao-na-camara-dilma-pedala-em-brasilia.html"
   },
   {
     "title": "Parecer do BC aponta Cunha como beneficiário de recursos na Suíça",
     "subtitle": "Presidente da Câmara é alvo de processo administrativo no Banco Central.\nCunha nega ser dono de contas e, em nota, critica divulgação do parecer.",
-    "activity_url": "http://g1.globo.com/politica/operacao-lava-jato/noticia/2016/04/parecer-do-bc-aponta-cunha-como-beneficiario-de-recursos-na-suica.html",
-    "image_url": "http://s3.glbimg.com/v1/AUTH_180b9dd048d9434295d27c4b6dadc248/media_kit/program/trademark/b060/b060f8a99b501aa1.svg"
+    "activity_url": "http://g1.globo.com/politica/operacao-lava-jato/noticia/2016/04/parecer-do-bc-aponta-cunha-como-beneficiario-de-recursos-na-suica.html"
   },
   {
     "title": "Câmara terá acesso restrito em semana de votação do impeachment",
     "subtitle": "Mesa Diretora decidiu restringir entrada por questões de segurança.\nApenas deputados, servidores e jornalistas credenciados entrarão na Casa.",
     "activity_url": "http://g1.globo.com/politica/processo-de-impeachment-de-dilma/noticia/2016/04/camara-tera-acesso-restrito-em-semana-de-votacao-do-impeachment.html"
+  }
+,
+  {
+    "title": "Tucanos decidem apoiar Temer; Caixa ignorou alertas de Conselho sobre pedalada. Jornais de sábado (9)",
+    "activity_url": "http://g1.globo.com/politica/blog/matheus-leitao/"
+  },
+  {
+    "title": "Governo pessimista com indefinição da situação do impeachment",
+    "activity_url": "http://g1.globo.com/politica/blog/blog-do-camarotti/"
+  },
+  {
+    "title": "Após 12 horas, comissão encerra 1º debate sobre parecer do impeachment",
+    "subtitle": "Reunião teve bate-boca, discursos acalorados, pão com queijo e mortadela.\nDebate será retomado na próxima segunda; votação ocorrerá no mesmo dia.",
+    "activity_url": "http://g1.globo.com/politica/processo-de-impeachment-de-dilma/noticia/2016/04/apos-12-horas-comissao-encerra-1-debate-sobre-parecer-do-impeachment.html"
+  },
+  {
+    "title": "Cardozo confirmou que irá a debate de comissão na segunda, diz Rosso",
+    "subtitle": "Colegiado da Câmara fará segundo debate sobre parecer do impeachment.\nCardozo poderá falar após o pronunciamento dos deputados inscritos.",
+    "activity_url": "http://g1.globo.com/politica/processo-de-impeachment-de-dilma/"
+  },
+  {
+    "title": "Lava Jato revelou 'corrupção sistêmica', diz Moro nos EUA",
+    "subtitle": "Juiz deu palestra para estudantes brasileiros em Chicago.\nMoro diz que não pode 'ficar pensando em impacto político' da operação.",
+    "activity_url": "http://g1.globo.com/politica/operacao-lava-jato/"
+  },
+  {
+    "title": "Deputados e manifestantes comem  pão, queijo e mortadela em comissão",
+    "subtitle": "Lanche foi servido na comissão do impeachment após 6 horas de reunião.\nRosso ofereceu pão com queijo a parlamentares, assessores e jornalistas.",
+    "activity_url": "http://g1.globo.com/politica/processo-de-impeachment-de-dilma/noticia/2016/04/deputados-e-manifestantes-comem-pao-queijo-e-mortadela-em-comissao.html"
+  },
+  {
+    "title": "Deputados trocam ofensas em comissão do impeachment",
+    "subtitle": "Silvio Costa e Danilo Forte se chamam de 'imbecil' e 'palhaço' durante sessão.\nCosta defendia governo e oposição questionou tempo extra para fala. ",
+    "activity_url": "http://g1.globo.com/politica/processo-de-impeachment-de-dilma/noticia/2016/04/deputados-trocam-ofensas-em-comissao-do-impeachment.html"
+  },
+  {
+    "title": "Eleições 2016: Prefeitura de Vila Velha tem pré-candidatos definidos",
+    "subtitle": "Confira o perfil de cada possível candidato ao cargo de prefeito.\nApós convenções, candidatos têm até 15 de agosto para requerer registro.",
+    "activity_url": "http://g1.globo.com/espirito-santo/noticia/2016/04/eleicoes-2016-prefeitura-de-vila-velha-tem-pre-candidatos-definidos.html"
+  },
+  {
+    "title": "Lula foi ouvido como investigado por suposta tentativa de fraudar delação ",
+    "subtitle": "Ex-presidente depôs nesta quinta na Procuradoria Geral da República.\nInvestigadores avaliarão se ele será incluído em denúncia já oferecida.",
+    "activity_url": "http://g1.globo.com/politica/operacao-lava-jato/"
+  },
+  {
+    "title": "TRF4 nega habeas corpus a Ronan Pinto, investigado pela Lava Jato",
+    "subtitle": "Defesa alegou que não se podia citar julgamentos anteriores para prisão.\nDecisão foi tomada pelo desembargador federal João Pedro Gebran.",
+    "activity_url": "http://g1.globo.com/rs/rio-grande-do-sul/noticia/2016/04/trf4-nega-habeas-corpus-ronan-pinto-investigado-pela-lava-jato.html"
+  }
+,
+  {
+    "title": "Em depoimento, Lula nega ter tentado interferir na Lava Jato",
+    "activity_url": "http://g1.globo.com/politica/blog/matheus-leitao/"
+  },
+  {
+    "title": "Lewandowski diz a governistas que priorizará ações sobre impeachment",
+    "subtitle": "Deputados de PT e PCdoB listaram 'irregularidades' em trâmite na Câmara.\nPresidente de comissão disse estar 'confiante' em regularidade do processo.",
+    "activity_url": "http://g1.globo.com/politica/processo-de-impeachment-de-dilma/"
+  },
+  {
+    "title": "OAB pede ao Supremo que anule escutas de advogados de Lula",
+    "subtitle": "Entidade apontou 'ofensa à prerrogativa profissional dos advogados'.\nJuiz Moro autorizou escutas porque um dos advogados é investigado.",
+    "activity_url": "http://g1.globo.com/politica/operacao-lava-jato/"
+  },
+  {
+    "title": "Tensão na reta final",
+    "activity_url": "http://g1.globo.com/politica/blog/cristiana-lobo/"
+  },
+  {
+    "title": "Concessionária de Belo Monte refuta acusação de propina em delação",
+    "subtitle": "Norte Energia diz que tem como princípios 'trabalhar dentro da legalidade'. \nDelação de empreiteira relata propina para campanhas de Dilma.",
+    "activity_url": "http://g1.globo.com/economia/"
+  },
+  {
+    "title": "O Velho Chico, nosso Jordão e Danúbio",
+    "activity_url": "http://g1.globo.com/politica/blog/matheus-leitao/"
+  },
+  {
+    "title": "Dilma não assistirá ao acendimento da tocha olímpica na Grécia",
+    "subtitle": "Evento acontece no dia 21, em Olímpia, berço dos jogos antigos.\nPresidência diz que visita nunca foi confirmada oficialmente.",
+    "activity_url": "http://g1.globo.com/mundo/noticia/2016/04/dilma-nao-assistira-ao-acendimento-da-tocha-olimpica-na-grecia.html"
+  },
+  {
+    "title": "Comissão do impeachment de Dilma: frases dos deputados sobre o parecer",
+    "subtitle": "Debate teve início nesta sexta; votação do relatório acontece na segunda.\nRelator é favorável ao prosseguimento do processo contra a presidente.",
+    "activity_url": "http://g1.globo.com/politica/processo-de-impeachment-de-dilma/noticia/2016/04/comissao-do-impeachment-de-dilma-frases-dos-deputados-sobre-o-parecer.html"
+  },
+  {
+    "title": "Base defende Dilma e oposição a acusa de 'terceirizar' governo",
+    "subtitle": "Comissão do impeachment iniciou debate parecer favorável ao processo.\nVotação do relatório está prevista para a próxima segunda-feira (11).",
+    "activity_url": "http://g1.globo.com/politica/processo-de-impeachment-de-dilma/noticia/2016/04/base-defende-dilma-e-oposicao-acusa-de-terceirizar-governo.html"
+  },
+  {
+    "title": "Dilma entrega casas no Rio e volta a negar crime de responsabilidade",
+    "subtitle": "Presidente participou de evento do Minha Casa Minha Vida em Santa Cruz.\nImóveis também foram entregues em MG, MA, MT e PA.",
+    "activity_url": "http://g1.globo.com/rio-de-janeiro/noticia/2016/04/dilma-entrega-casas-no-rio-e-volta-negar-crime-de-responsabilidade.html"
+  }
+,
+  {
+    "title": "Gleisi Hoffmann é hostilizada por grupo de manifestantes em aeroporto",
+    "subtitle": "Vídeo mostra que grupo segue e ofende a senadora no terminal em Curitiba.\nUm dos manifestantes chega a ameaçar homem que acompanha Gleisi.",
+    "activity_url": "http://g1.globo.com/pr/parana/noticia/2016/04/gleisi-hoffmann-e-hostilizada-por-grupo-de-manifestantes-em-aeroporto.html"
+  },
+  {
+    "title": "Relator diz que Cardozo 'não leu direito a Constituição'",
+    "subtitle": "Ministro da AGU disse que parecer de Jovair 'agravou ilicitude' do processo.\nDeputado afirmou que não aceita ‘nenhuma das críticas’ feitas por Cardozo.",
+    "activity_url": "http://g1.globo.com/politica/processo-de-impeachment-de-dilma/"
+  },
+  {
+    "title": "Comissão do impeachment inicia discussão sobre parecer de relator",
+    "subtitle": "Texto recomenda abertura do processo de afastamento de Dilma.\nPor acordo de líderes, sessão desta sexta será encerrada às 3h de sábado.",
+    "activity_url": "http://g1.globo.com/politica/processo-de-impeachment-de-dilma/"
+  },
+  {
+    "title": "Relatório do impeachment agravou 'ilicitude' do processo, diz Cardozo",
+    "subtitle": "Ministro da AGU contestou pontos do parecer de relator da comissão.\nEle disse que Dilma cumpriu ordem do TCU ao abrir créditos suplementares.",
+    "activity_url": "http://g1.globo.com/politica/processo-de-impeachment-de-dilma/noticia/2016/04/relatorio-do-impeachment-agravou-ilicitude-do-processo-diz-cardozo.html"
+  },
+  {
+    "title": "PF lança página na internet sobre a Lava Jato",
+    "activity_url": "http://g1.globo.com/politica/blog/matheus-leitao/"
+  },
+  {
+    "title": "‘Ser deputado é tranquilo... Faço de conta que trabalho’, diz Paulo Maluf",
+    "subtitle": "Deputado comenta todos os escândalos de corrupção envolvendo seu nome, diz que vota pró-impeachment, mas que Dilma \"é correta e decente\", e cita Barroso sobre possível governo PMDB: 'Meu Deus, é isso que nos espera?'.",
+    "activity_url": "http://g1.globo.com/politica/noticia/2016/04/ser-deputado-e-tranquilo-faco-de-conta-que-trabalho-diz-paulo-maluf.html"
+  },
+  {
+    "title": "Miriam Dutra diz à PF que dinheiro recebido de FHC foi usado para o filho",
+    "subtitle": "Jornalista prestou depoimento na sede da PF na quinta-feira.\nEm nota, advogado afirmou que Tomas é filho dela com Fernando Henrique.",
+    "activity_url": "http://g1.globo.com/sao-paulo/noticia/2016/04/miriam-dutra-diz-pf-que-dinheiro-recebido-de-fhc-foi-usado-para-o-filho.html"
+  },
+  {
+    "title": "'Maluquice total, ideia de jerico', diz Miguel Reale Jr. sobre novas eleições",
+    "subtitle": "Jurista autor do pedido de impeachment participa de seminário em SP.\nIdeia encampada por parlamentares e Renan Calheiros é refutada por ele.",
+    "activity_url": "http://g1.globo.com/politica/processo-de-impeachment-de-dilma/noticia/2016/04/maluquice-total-ideia-de-jerico-diz-miguel-reale-jr-sobre-novas-eleicoes.html"
+  },
+  {
+    "title": "Comissão do impeachment deve discutir parecer até 3h de sábado",
+    "subtitle": "Decisão foi tomada em reunião entre Rogério Rosso e os líderes partidários.\nVotação do relatório ficou para de segunda-feira (11).",
+    "activity_url": "http://g1.globo.com/politica/processo-de-impeachment-de-dilma/noticia/2016/04/discussao-de-parecer-do-impeachment-acaba-na-madrugada-diz-presidente-da-comissao.html"
+  },
+  {
+    "title": "PSDB fecha posição a favor do impeachment após reunião em SP",
+    "subtitle": "'100% do PSDB apoia o afastamento da presidente Dilma', diz Aécio Neves.\nTambém participaram FHC, Geraldo Alckmin e governadores do partido.",
+    "activity_url": "http://g1.globo.com/sao-paulo/noticia/2016/04/governadores-e-liderancas-do-psdb-se-reunem-em-sao-paulo.html"
   }
 ]
