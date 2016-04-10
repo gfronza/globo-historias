@@ -28,7 +28,8 @@
     "gulp-uglify": "^1.1.0",
     "gulp-useref": "^3.0.0",
     "main-bower-files": "^2.5.0",
-    "wiredep": "^2.2.2"
+    "wiredep": "^2.2.2",
+    "gulp-util": "~3.0.7"
   },
   "eslintConfig": {
     "env": {
@@ -45,6 +46,10 @@
   },
   "dependencies": {
     "body-parser": "^1.15.0",
-    "multer": "^1.1.0"
+    "multer": "^1.1.0",
+    "through2": "~2.0.1",
+    "object-assign": "~4.0.1",
+    "vinyl-sourcemaps-apply": "~0.2.1",
+    "node-sass": "~3.4.2"
   }
 }

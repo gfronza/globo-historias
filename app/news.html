@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" ng-app="GloboHistorias">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -12,14 +12,13 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="styles/font-awesome.css">
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
@@ -87,67 +86,25 @@
         </div>
 
         <div class="globo-historia">
-          <ul class="globo-historia-list">
-            <li class="row">
-              <div class="col s3 m2">
-                <a href="#" class="open-modal"><img src="http://placehold.it/100x75" class="img-responsive"></a>
+          <ul class="globo-historia-list" ng-controller="storyCtrl">
+            <li class="row" ng-repeat="story in stories">
+              <div class="col s4 m2">
+                <a href="#" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
               </div>
-              <div class="col s9 m10">
+              <div class="col s8 m10">
                 <p>
-                  <a href="" class="chip">assalto</a> <a href="" class="chip">internacional</a> <a href="" class="chip">acidente</a>
+                  <span class="chip" ng-repeat="tag in tags">{{::story.tag}}</span>
                 </p>
                 <small>
-                  <span><i class="fa fa-clock-o"></i> 2 dias atrás</span>
+                  <span><i class="fa fa-clock-o"></i> {{story.time_stamp}} 2 dias atrás</span>
                 </small>
 
                 <div class="reactions">
-                  <a href="" class="active"><i class="like"></i> <span>0</span></a>
-                  <a href=""><i class="love"></i> <span>0</span></a>
-                  <a href=""><i class="wow"></i> <span>0</span></a>
-                  <a href=""><i class="sad"></i> <span>0</span></a>
-                  <a href=""><i class="angry"></i> <span>0</span></a>
-                </div>
-              </div>
-            </li>
-            <li class="row">
-              <div class="col s3 m2">
-                <a href="#" class="open-modal"><img src="http://placehold.it/100x75" class="img-responsive"></a>
-              </div>
-              <div class="col s9 m10">
-                <p>
-                  <a href="" class="chip">assalto</a> <a href="" class="chip">internacional</a> <a href="" class="chip">acidente</a>
-                </p>
-                <small>
-                  <span><i class="fa fa-clock-o"></i> 2 dias atrás</span>
-                </small>
-
-                <div class="reactions">
-                  <a href="" class="active"><i class="like"></i> <span>0</span></a>
-                  <a href=""><i class="love"></i> <span>0</span></a>
-                  <a href=""><i class="wow"></i> <span>0</span></a>
-                  <a href=""><i class="sad"></i> <span>0</span></a>
-                  <a href=""><i class="angry"></i> <span>0</span></a>
-                </div>
-              </div>
-            </li>
-            <li class="row">
-              <div class="col s3 m2">
-                <a href="#" class="open-modal"><img src="http://placehold.it/100x75" class="img-responsive"></a>
-              </div>
-              <div class="col s9 m10">
-                <p>
-                  <a href="" class="chip">assalto</a> <a href="" class="chip">internacional</a> <a href="" class="chip">acidente</a>
-                </p>
-                <small>
-                  <span><i class="fa fa-clock-o"></i> 2 dias atrás</span>
-                </small>
-
-                <div class="reactions">
-                  <a href="" class="active"><i class="like"></i> <span>0</span></a>
-                  <a href=""><i class="love"></i> <span>0</span></a>
-                  <a href=""><i class="wow"></i> <span>0</span></a>
-                  <a href=""><i class="sad"></i> <span>0</span></a>
-                  <a href=""><i class="angry"></i> <span>0</span></a>
+                  <a href="" class="active"><i class="like"></i> <span>{{::story.reactions.like}}</span></a>
+                  <a href=""><i class="love"></i> <span>{{::story.reactions.love}}</span></a>
+                  <a href=""><i class="wow"></i> <span>{{::story.reactions.wow}}</span></a>
+                  <a href=""><i class="sad"></i> <span>{{::story.reactions.sad}}</span></a>
+                  <a href=""><i class="angry"></i> <span>{{::story.reactions.angry}}</span></a>
                 </div>
               </div>
             </li>
@@ -233,15 +190,20 @@
   <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/plugins.js -->
     <script src="scripts/materialize.js"></script>
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/app.js -->
+    <script src="scripts/app.js"></script>
     <!-- endbuild -->
   </body>
 </html>
