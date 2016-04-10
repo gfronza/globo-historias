@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="" ng-app="GloboHistorias">
+<html class="no-js" lang="" ng-app="GloboHistorias" ng-clock>
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -88,7 +88,7 @@
 
         <div class="globo-historia">
           <ul class="globo-historia-list" ng-controller="storyCtrl">
-            <li class="row" ng-repeat="story in stories">
+            <li class="row" ng-repeat="story in stories | orderBy:count_reactions:true">
               <div class="col s4 m2">
                 <a href="#" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
               </div>
