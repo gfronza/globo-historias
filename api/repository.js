@@ -7,7 +7,7 @@ module.exports = {
               name: 'Gabriel',
               snapshot_url: 'foto_do_user.jpg'
             },
-            video_url: 'samplelink.mp4',
+            video_url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
             story_url: 'address-in-which-the-video-will-be-available',
             story_thumb: 'url-to-img.jpg',
             tags: [],
@@ -34,7 +34,7 @@ module.exports = {
             name: 'Gabriel',
             snapshot_url: 'foto_do_user.jpg'
           },
-          video_url: 'samplelink.mp4',
+          video_url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
           story_url: 'address-in-which-the-video-will-be-available',
           story_thumb: 'url-to-img.jpg',
           tags: [],
@@ -62,7 +62,7 @@ module.exports = {
             name: 'Gabriel',
             snapshot_url: 'foto_do_user.jpg'
           },
-          video_url: 'samplelink.mp4',
+          video_url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
           story_url: 'address-in-which-the-video-will-be-available',
           story_thumb: 'url-to-img.jpg',
           tags: [],
@@ -91,7 +91,7 @@ module.exports = {
             name: 'Gabriel',
             snapshot_url: 'foto_do_user.jpg'
           },
-          video_url: 'samplelink.mp4',
+          video_url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
           story_url: 'address-in-which-the-video-will-be-available',
           story_thumb: 'url-to-img.jpg',
           tags: [],
@@ -119,7 +119,7 @@ module.exports = {
           name: 'Gabriel',
           snapshot_url: 'foto_do_user.jpg'
         },
-        video_url: 'samplelink.mp4',
+        video_url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
         story_url: 'address-in-which-the-video-will-be-available',
         story_thumb: 'url-to-img.jpg',
         tags: [],
@@ -148,7 +148,7 @@ module.exports = {
             name: 'Gabriel',
             snapshot_url: 'foto_do_user.jpg'
           },
-          video_url: 'samplelink.mp4',
+          video_url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
           story_url: 'address-in-which-the-video-will-be-available',
           story_thumb: 'url-to-img.jpg',
           tags: [],
@@ -174,7 +174,7 @@ module.exports = {
           name: 'Gabriel',
           snapshot_url: 'foto_do_user.jpg'
         },
-        video_url: 'samplelink.mp4',
+        video_url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
         story_url: 'address-in-which-the-video-will-be-available',
         story_thumb: 'url-to-img.jpg',
         tags: [],
