@@ -4,3 +4,4 @@ storage
 .sass-cache
 bower_components
 .DS_Store
+.vagrant
