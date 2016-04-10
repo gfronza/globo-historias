@@ -178,8 +178,6 @@ vaRecorder.directive("ngcamcecorder" , function(){
         // $scope.$apply(function(){
         //     $scope.configuration.output.recordingthumb = videobase64;
         // });
-        console.log(audioblob);
-        console.log(videoblob);
 
         // converts blob to base64
         var blobToBase64 = function(audioblob, videoblob, cb) {
@@ -188,17 +186,17 @@ vaRecorder.directive("ngcamcecorder" , function(){
           var reader_audio = new FileReader();
           reader_audio.onload = function() {
             var dataUrl = reader_audio.result;
-            audio_64 = dataUrl.split(',')[1];
-            if(audio_64 && video_b64){
-              cb(audio_64, video_b64);
+            audio_b64 = dataUrl.split(',')[1];
+            if(audio_b64 && video_b64){
+              cb(audio_b64, video_b64);
             }
           };
           var reader_video = new FileReader();
           reader_video.onload = function() {
             var dataUrl = reader_video.result;
             video_b64 = dataUrl.split(',')[1];
-            if(audio_64 && video_b64){
-              cb(audio_64, video_b64);
+            if(audio_b64 && video_b64){
+              cb(audio_b64, video_b64);
             }
           };
           reader_audio.readAsDataURL(audioblob);
@@ -206,10 +204,16 @@ vaRecorder.directive("ngcamcecorder" , function(){
         };
 
         blobToBase64(audioblob, videoblob, function(audio_b64, video_b64){ // encode
-          var update = {'audio': audio_b64, 'video': video_b64, 'id': 321321321, 'tags': []};
-            // console.log(update);
-            console.log(video_b64);
-            console.log(audio_b64);
+            var updateData = {'audio': audio_b64, 'video': video_b64, 'id': 321321321, 'tags': []};
+
+            $.ajax({
+              type: "POST",
+              url: 'http://localhost:3000/composer/create-new-story',
+              data: updateData,
+              success: function() {
+                  console.log("post success!!");
+              },
+            });
         });
     }
 

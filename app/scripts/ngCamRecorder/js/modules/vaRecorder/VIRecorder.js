@@ -168,9 +168,6 @@ var VIRecorder = (function(){
         videoBlobData = videoblob;
         videoBlobURL = window.URL.createObjectURL(videoblob);
         audioBlobURL = window.URL.createObjectURL(audioblob);
-        console.log("blobs");
-        console.log(audioblob);
-        console.log(videoblob);
         videoElement.autoplay = false;
         videoElement.src = videoBlobURL;
         // var newfremearray = frames;

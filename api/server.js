@@ -1,5 +1,6 @@
 var express = require('express');
 var multer = require('multer');
+var cors = require('cors');
 var fake = require('./fake');
 var repository = require('./repository');
 var videoManager = require('./videoManager');
@@ -10,11 +11,13 @@ var app = express();
 // TODO: use nginx to serve static content.
 app.use('/videos', express.static('storage'));
 
+app.use(cors());
+
 // create application/json parser
 var jsonParser = bodyParser.json()
 
 // create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+var urlencodedParser = bodyParser.urlencoded({ extended: false, limit: '10mb' })
 
 // TODO: use nginx to serve static content.
 app.use('/videos', express.static('storage'));
@@ -25,6 +28,7 @@ app.route('/composer/create-new-story')
         var story = repository.createStory(req.body, videoFilename);
 
         res.json(story);
+        console.log('Story created!!');
     });
 
   app.route('/editor/get-activities')
