@@ -1,0 +1,103 @@
+<!doctype html>
+<html class="no-js" lang="" ng-app="GloboHistorias">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Hackathon Globo - Gravação</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="scripts/ngCamRecorder/js/modules/vaRecorder/css/virecorder.css">
+    <style>
+      .video-area{
+        width: 100%;
+      }
+    </style>
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+  <div class="navbar-fixed">
+    <nav class="red">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo center"><img src="images/g1.png" alt="G1" /></a>
+        <!--
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-navicon"></i></a>
+        <ul class="left hide-on-med-and-down">
+          <li><a href="top.html">Top</a></li>
+          <li><a href="new.html">Novas</a></li>
+          <li><a href="best.html">Melhores</a></li>
+          <li><a href="dayly.html">Do dia</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="top.html">Top</a></li>
+          <li><a href="new.html">Novas</a></li>
+          <li><a href="best.html">Melhores</a></li>
+          <li><a href="dayly.html">Do dia</a></li>
+        </ul>
+        -->
+      </div>
+    </nav>
+  </div>
+
+  <div class="section">
+    <div class="row">
+      <div class="video-area" ng-controller="testcontroller">
+         <!-- here is how you use the module it -->
+         <ngcamcecorder configuration="camconfiguration"></ngcamcecorder>
+
+         <div ng-init="camconfiguration.init()" id="initvideo"></div>
+         <!-- <img ng-src="{{camconfiguration.output.recordingthumb}}" /> -->
+      </div>
+    </div>
+
+    <div class="divider"></div>
+  </div>
+
+  <footer class="page-footer red">
+    <div class="footer-copyright">
+      <div class="container">
+        Hackathon Globo 2016 - Made with <i class="fa fa-heart"></i> Richard, Gemano, Betina, Arthur e Gabriel
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <script type="text/javascript" src="scripts/ngCamRecorder/js/modules/vaRecorder/ngCamRecorder.js"></script>
+
+    <script type="text/javascript" src="scripts/ngCamRecorder/js/modules/vaRecorder/recorder.js"></script>
+    <script type="text/javascript" src="scripts/ngCamRecorder/js/modules/vaRecorder/whammy.js"></script>
+    <script type="text/javascript" src="scripts/ngCamRecorder/js/modules/vaRecorder/VIRecorder.js"></script>
+
+    <!-- build:js scripts/plugins.js -->
+    <script src="scripts/materialize.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/app.js -->
+    <script src="scripts/app.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
