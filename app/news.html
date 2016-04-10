@@ -177,7 +177,7 @@
             <li class="row" ng-repeat="story in stories | filter:differentVideo">
               <div class="col s6">
                 <div class="embed-responsive embed-responsive-16by9">
-                  <img ng-src="{{::story.story_thumb}}" class="embed-responsive-item" />
+                  <img ng-click="abrirVideo(story.video_url)" ng-src="{{::story.story_thumb}}" class="embed-responsive-item" />
                 </div>
               </div>
               <div class="col s6 white-text small-title">{{::story.title}}</div>
