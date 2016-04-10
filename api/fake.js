@@ -19,9 +19,9 @@ module.exports = {
           banned: false,
           reviewed: true,
           reactions: {
-            like: 4,
+            like: 3,
             sad: 2,
-            love: 3,
+            love: 6,
             angry: 2,
             wow: 0
           }
@@ -45,7 +45,7 @@ module.exports = {
           reactions: {
             like: 4,
             sad: 2,
-            love: 3,
+            love: 9,
             angry: 2,
             wow: 0
           }
@@ -95,9 +95,9 @@ module.exports = {
           banned: false,
           reviewed: true,
           reactions: {
-            like: 4,
+            like: 2,
             sad: 2,
-            love: 3,
+            love: 6,
             angry: 2,
             wow: 0
           }

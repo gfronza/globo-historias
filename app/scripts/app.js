@@ -62,3 +62,34 @@ app.controller("cameraCtrl" , ['$scope', function($scope){
     }
 	$scope.camconfiguration = configuration;
 }]);
+
+directive('ngHold', ['$timeout', function($timeout) {
+    return {
+      restrict: 'A',
+      link: function(scope, el, attrs) {
+        var isHolding, timeoutId;
+
+        el.on('mousedown', function($event) {
+          scope.$event = $event;
+          isHolding = true;
+
+          //TODO: implement timeout passing via attribute like here:
+          //https://github.com/angular-ui/angular-ui/blob/master/modules/directives/keypress/keypress.js
+          timeoutId = $timeout(function() {
+            if(isHolding) {
+              scope.$apply(attrs.ngHold);
+            }
+          }, 500);
+        });
+
+        el.on('mouseup', function() {
+          isHolding = false;
+
+          if(timeoutId) {
+            $timeout.cancel(timeoutId);
+            timeoutId = null;
+          }
+        });
+      }
+    }
+  }]);
