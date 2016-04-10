@@ -1,8 +1,20 @@
 // toggle visibility for css3 animations 
 $(document).ready(function () {
   $(".button-collapse").sideNav();
-});
 
+  //Open modal
+  $('.open-modal').click(function() {
+    $('#media').fadeIn(600);
+    $(this).preventDefault();
+  });
+
+  //Close Modal com Esc
+  $(document).keyup(function(e) {
+    if (e.keyCode == 27) { // escape key maps to keycode `27`
+      $('#media').fadeOut(600);
+    }
+  });
+});
 
 //iphone carousel animation
 $(window).load(function () {

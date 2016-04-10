@@ -2,7 +2,17 @@ var express = require('express');
 var multer = require('multer');
 var fake = require('./fake');
 var repository = require('./repository');
+var bodyParser = require('body-parser');
 var app = express();
+
+// TODO: use nginx to serve static content.
+app.use('/videos', express.static('storage'));
+
+// create application/json parser
+var jsonParser = bodyParser.json()
+
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 var storage = multer.diskStorage({
   destination: function (req, file, callback) {
@@ -14,6 +24,9 @@ var storage = multer.diskStorage({
 });
 
 var storyVideoUpload = multer({ storage : storage}).single('storyVideo');
+
+// TODO: use nginx to serve static content.
+app.use('/videos', express.static('storage'));
 
 app.route('/composer/create-new-story')
     .post(function(req, res) {
@@ -51,7 +64,7 @@ app.route('/composer/create-new-story')
     }
     var activity_id = req.query.activity_id;
     //call the database to retrieve stories with matched_activities._id == activity_id
-    var response = fake.apiHelper('stories-by-activity', {activity_id: activity_id});
+    var response = fake.apiHelper('stories-by-activity', {'activity_id': activity_id});
     if(response.err){
       console.log(response.err);
       res.send(response.err);
@@ -64,10 +77,10 @@ app.route('/composer/create-new-story')
     .get(function(req, res){
       var story_id = req.query.story_id;
       if (!story_id) {
-        res.send({failure: 'story_id was not send'});
+        res.send({failure: 'story_id was not sent'});
         return;
       }
-      var response = fake.apiHelper('story-by-id', {story_id: story_id});
+      var response = fake.apiHelper('story-by-id', {'story_id': story_id});
       if(response.err) {
         console.log(response.err);
         res.send(response.err);
@@ -80,11 +93,11 @@ app.route('/composer/create-new-story')
     .get(function(req, res){
       var activity_id = req.query.activity_id;
       if (!activity_id) {
-        res.send({failure: 'activity_id was not send'});
+        res.send({failure: 'activity_id was not sent'});
         return;
       }
       // var response = fake.apiHelper('widget-stories-by-activity', {activity_id: activity_id});
-      var response = fake.apiHelper('stories-by-activity', {activity_id: activity_id});
+      var response = fake.apiHelper('stories-by-activity', {'activity_id': activity_id});
       if(response.err) {
         console.log(response.err);
         res.send(response.err);
@@ -92,6 +105,99 @@ app.route('/composer/create-new-story')
         res.send(response);
       }
     });
+
+  app.route('/editor/approve-story-for-activity')
+      .post(urlencodedParser, function(req, res) {
+        var activity_id = req.body.activity_id;
+        var story_id = req.body.story_id;
+        if(!activity_id || !story_id){
+          var failure = 'activity_id or story_id was not sent';
+          console.log('activity_id or story_id was not sent')
+          res.send(failure);
+        } else {
+          var response = repository.approveStoryForActivity(activity_id, story_id);
+          if(response.err){
+            console.log(response.err);
+            res.send(response.err);
+          } else {
+            res.send(response);
+          }
+        }
+      });
+
+  app.route('/editor/ban_story')
+      .post(urlencodedParser, function(req, res) {
+        var story_id = req.body.story_id;
+        if(!story_id){
+          var failure = 'story_id was not sent';
+          console.log('story_id was not sent');
+          res.send(failure);
+        } else {
+          var response = repository.banStory(story_id);
+          if(response.err){
+            console.log(response.err);
+            res.send(response.err);
+          } else {
+            res.send(response);
+          }
+        }
+      });
+
+  app.route('/editor/deny-story-for-activity')
+      .post(urlencodedParser, function(req, res) {
+        var activity_id = req.body.activity_id;
+        var story_id = req.body.story_id;
+        if(!activity_id || !story_id){
+          var failure = 'activity_id or story_id was not sent';
+          console.log('activity_id or story_id was not sent');
+          res.send(failure);
+        } else {
+          var response = repository.denyStoryForActivity(activity_id, story_id);
+          if(response.err){
+            console.log(response.err);
+            res.send(response.err);
+          } else {
+            res.send(response);
+          }
+        }
+      });
+
+  app.route('/widget/react-to-story-for-activity')
+      .post(urlencodedParser, function(req, res) {
+        var activity_id = req.body.activity_id;
+        var story_id = req.body.story_id;
+        var reaction = req.body.reaction;
+        if(!activity_id || !story_id || !reaction){
+          var failure = 'activity_id or story_id or reaction was not sent';
+          console.log('activity_id or story_id or reaction was not sent');
+          res.send(failure);
+        } else {
+          var response = repository.reactToStoryForActivity(activity_id, story_id, reaction);
+          if(response.err){
+            console.log(response.err);
+            res.send(response.err);
+          } else {
+            res.send(response);
+          }
+        }
+      });
+
+  app.route('/author/stories-by-author-id')
+      .get(function(req, res) {
+        var author_id = req.query.author_id;
+        if (!author_id) {
+          res.send({failure: 'author_id was not sent'});
+          return;
+        } else {
+          var response = repository.storiesByAuthor(author_id);
+          if(response.err){
+            console.log(response.err);
+            res.send(response.err);
+          } else {
+            res.send(response);
+          }
+        }
+      });
 
 app.listen(3000);
 

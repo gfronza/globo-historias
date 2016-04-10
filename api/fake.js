@@ -4,9 +4,14 @@ module.exports = {
       var stories = [
         {
           _id: 283239819393,
-          video_url: 'samplelink.mp4',
+          author: {
+            id: 321321321,
+            name: 'Gabriel',
+            snapshot_url: 'foto_do_user.jpg'
+          },
+          video_url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
           story_url: 'address-in-which-the-video-will-be-available',
-          story_thumb: 'url-to-img.jpg',
+          story_thumb: 'http://tinyurl.com/jood6zl',
           tags: [],
           time_stamp: '2016-11-04 10:51:00',
           matched: true,
@@ -23,9 +28,14 @@ module.exports = {
         },
         {
           _id: 283239819393,
-          video_url: 'samplelink.mp4',
+          author: {
+            id: 321321321,
+            name: 'Gabriel',
+            snapshot_url: 'foto_do_user.jpg'
+          },
+          video_url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
           story_url: 'address-in-which-the-video-will-be-available',
-          story_thumb: 'url-to-img.jpg',
+          story_thumb: 'http://tinyurl.com/jood6zl',
           tags: [],
           time_stamp: '2016-11-04 10:51:00',
           matched: true,
@@ -42,9 +52,14 @@ module.exports = {
         },
         {
           _id: 283239819393,
-          video_url: 'samplelink.mp4',
+          author: {
+            id: 321321321,
+            name: 'Gabriel',
+            snapshot_url: 'foto_do_user.jpg'
+          },
+          video_url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
           story_url: 'address-in-which-the-video-will-be-available',
-          story_thumb: 'url-to-img.jpg',
+          story_thumb: 'http://tinyurl.com/jood6zl',
           tags: [],
           time_stamp: '2016-11-04 10:51:00',
           matched: true,
@@ -65,9 +80,14 @@ module.exports = {
       return (
         {
           _id: 283239819393,
-          video_url: 'samplelink.mp4',
+          author: {
+            id: 321321321,
+            name: 'Gabriel',
+            snapshot_url: 'foto_do_user.jpg'
+          },
+          video_url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
           story_url: 'address-in-which-the-video-will-be-available',
-          story_thumb: 'url-to-img.jpg',
+          story_thumb: 'http://tinyurl.com/jood6zl',
           tags: [],
           time_stamp: '2016-11-04 10:51:00',
           matched: true,
