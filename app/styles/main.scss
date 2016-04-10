@@ -10,9 +10,16 @@ $icon-font-path: '../fonts/';
 
 body {
   font-size: 16px;
+
   a {
     color: #ee3d40;
   }
+}
+
+.subtitle {
+  color: #ee3d40;
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .menu-option-list {
