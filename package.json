@@ -46,6 +46,7 @@
     "cors": "^2.7.1",
     "express": "v4.13.4",
     "fluent-ffmpeg": "^2.0.1",
+    "mongodb": "^2.1.16",
     "multer": "^1.1.0",
     "node-sass": "~3.4.2",
     "object-assign": "~4.0.1",
