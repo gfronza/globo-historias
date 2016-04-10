@@ -177,52 +177,12 @@ vaRecorder.directive("ngcamcecorder" , function(){
     var functioncalltime = 0;
 
     function oncaptureFinish(audioblob, videoblob, framearray){
-        // if(typeof framearray == "undefined"){
-        //     var videobase64 = framearray[videoblob.size/2];
-        // }
-        // else{
-        //     var videobase64 = framearray[framearray.length/2];
-        // }
-        // $scope.$apply(function(){
-        //     $scope.configuration.output.recordingthumb = videobase64;
-        // });
+        $('#media').fadeIn(600);
 
-        // converts blob to base64
-        var blobToBase64 = function(audioblob, videoblob, cb) {
-          var audio_b64;
-          var video_b64;
-          var reader_audio = new FileReader();
-          reader_audio.onload = function() {
-            var dataUrl = reader_audio.result;
-            audio_b64 = dataUrl.split(',')[1];
-            if(audio_b64 && video_b64){
-              cb(audio_b64, video_b64);
-            }
-          };
-          var reader_video = new FileReader();
-          reader_video.onload = function() {
-            var dataUrl = reader_video.result;
-            video_b64 = dataUrl.split(',')[1];
-            if(audio_b64 && video_b64){
-              cb(audio_b64, video_b64);
-            }
-          };
-          reader_audio.readAsDataURL(audioblob);
-          reader_video.readAsDataURL(videoblob);
-        };
+        window.audioblob = audioblob;
+        window.videoblob = videoblob;
 
-        blobToBase64(audioblob, videoblob, function(audio_b64, video_b64){ // encode
-            var updateData = {'audio': audio_b64, 'video': video_b64, 'id': 321321321, 'tags': []};
-
-            $.ajax({
-              type: "POST",
-              url: 'http://localhost:3000/composer/create-new-story',
-              data: updateData,
-              success: function() {
-                  console.log("post success!!");
-              },
-            });
-        });
+        
     }
 
     function setCountDownTime(time){
