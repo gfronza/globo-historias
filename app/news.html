@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
@@ -100,7 +101,7 @@
               <ul class="globo-historia-list row" ng-controller="storyCtrl">
                 <li ng-repeat="story in stories | orderBy:'reactions.like':true | filter:filterLike as count" class="col s4 m2">
                   <div>
-                    <a ng-href="{{::story.video_url}}" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                    <a ng-click="abrirVideo(story.story_thumb)" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
                   </div>
                 </li>
               </ul>
@@ -109,7 +110,7 @@
               <ul class="globo-historia-list row" ng-controller="storyCtrl">
                 <li class="col s4 m2" ng-repeat="story in stories | orderBy:'reactions.love':true | filter:filterLove">
                   <div>
-                    <a ng-href="{{::story.video_url}}" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                    <a data-href="" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
                   </div>
                 </li>
               </ul>
@@ -118,7 +119,7 @@
               <ul class="globo-historia-list row" ng-controller="storyCtrl">
                 <li class="col s4 m2" ng-repeat="story in stories | orderBy:'reactions.wow':true | filter:filterWow">
                   <div>
-                    <a ng-href="{{::story.video_url}}" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                    <a href="" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
                   </div>
                 </li>
               </ul>
@@ -127,7 +128,7 @@
               <ul class="globo-historia-list row" ng-controller="storyCtrl">
                 <li class="col s4 m2" ng-repeat="story in stories | orderBy:'reactions.sad':true | filter:filterSad">
                   <div>
-                    <a ng-href="{{::story.video_url}}" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                    <a href="" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
                   </div>
                 </li>
               </ul>
@@ -136,7 +137,7 @@
               <ul class="globo-historia-list row" ng-controller="storyCtrl">
                 <li class="col s4 m2" ng-repeat="story in stories | orderBy:'reactions.angry':true | filter:filterAngry">
                   <div>
-                    <a ng-href="{{::story.video_url}}" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                    <a href="" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
                   </div>
                 </li>
               </ul>
@@ -168,9 +169,6 @@
             <h5 class="" style="color:#a0a0a0;">Hackathon Globo</h5>
             <div class="video-player embed-responsive embed-responsive-16by9">
               <div id="player" class="embed-responsive-item"></div>
-              <script>
-                var player = new Clappr.Player({source: "http://your.video/here.mp4", parentId: "#player"});
-              </script>
             </div>
             <br>
             <div class="center">
@@ -224,7 +222,7 @@
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/clappr/src/main.js"></script>
+
     <!-- endbower -->
     <!-- endbuild -->
 

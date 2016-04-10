@@ -79,6 +79,11 @@ app.controller("storyCtrl" , ['$scope', '$http', function($scope, $http){
       return true;
     }
   }
+  
+  $scope.abrirVideo = function(video) {
+    var player = new Clappr.Player({source: video, parentId: "#player"});
+    // alert(video);
+  };
 }]);
 
 
