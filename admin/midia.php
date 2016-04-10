@@ -1,3 +1,6 @@
+		<script src="js/functions.js"></script>
+
+
 <?php
 
 include 'config.php';
@@ -5,32 +8,33 @@ include 'config.php';
 if (isset($_GET['id'])) {
 
 	$id = $_GET['id'];
+	// $storiesAPI = Story::getStoriesByActivityId($id);
+
+	// if(isset($_GET['action'])){
+	// 	$storyId = $_GET['story_id'];
+	// 	switch ($_GET['action']) {
+	// 		case 'approve':
+	// 			Story::approveStory($id, $storyId);				
+	// 			array_splice($storiesAPI, 0, 1);
+
+	// 			break;
+	// 		case 'ban':
+	// 			Story::banStory($id);
+	// 			array_splice($storiesAPI, 0, 1);
+	// 			break;
+	// 		case 'deny':
+	// 			Story::denyStory($id, $storyId);
+	// 			array_splice($storiesAPI, 0, 1);
+	// 			break;								
+	// 		default:
+	// 			break;
+	// 	}
+	// }
+	// unset($stories);
 	
-	if(isset($_GET['action'])){
-		$storyId = $_GET['story_id'];
-		switch ($_GET['action']) {
-			case 'approve':
-				Story::approveStory($id, $storyId);				
-
-				break;
-			case 'ban':
-				Story::banStory($id);
-
-				break;
-			case 'deny':
-				Story::denyStory($id, $storyId);
-
-				break;								
-			default:
-				break;
-		}
-	}
-	unset($stories);
 	$storiesAPI = Story::getStoriesByActivityId($id);
-
 	?>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
-	<script type="text/javascript" src="js/functions.js"></script>
+	
 	<div class="container ">
 		<div class="section">
 			<div class="row">
@@ -80,13 +84,13 @@ if (isset($_GET['id'])) {
 			}
 			else{
 				?>
-				<div class="col s12 m3">
+				<div class="col s12 m3" class="storyList" data-video-url="<?php echo $story->video_url;?>" >
 					<!-- row thumbnail -->
 					<div class="row">
 						<div class="col m5">
 	             			 <div class="thumbnail" style="background-image:url(<?php echo $story->story_thumb;?>);"></div>            
 						</div>
-						<div class="col m7 white-text small-title">Teste</div>
+						<div class="col m7 white-text small-title"><?php echo $story->video_url;?></div>
 						<div class="divider"></div>
 					</div>
 				</div>	

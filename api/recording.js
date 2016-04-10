@@ -10,15 +10,42 @@ module.exports = {
         return writeFile(destFile, buf);
     },
     mergeAudioAndVideo: function(audioFilename, videoFilename, finalVideo) {
-        var cmd = ffmpeg().input(audioFilename)
-                          .input(videoFilename)
-                          .audioCodec('aac')
-                          .videoCodec('libx264')
-                          .on('error', function(err, stdout, stderr) {
-                              console.log('an error happened: ' + err.message, stdout, stderr);
-                          })
-                          .output(finalVideo);
+        return new Promise(function (fulfill, reject) {
+            console.log('encoding final video');
+            var cmd = ffmpeg().input(audioFilename)
+                              .input(videoFilename)
+                              .audioCodec('aac')
+                              .videoCodec('libx264')
+                              .on('error', function(err, stdout, stderr) {
+                                  reject(err);
+                              })
+                              .on('end', function(err, stdout, stderr) {
+                                  if (err) {
+                                      reject(err);
+                                  }
+                                  else {
+                                      console.log('final video encoded');
+                                      fulfill(stdout);
+                                  }
+                              })
+                              .output(finalVideo);
 
-        cmd.run();
+            cmd.run();
+        });
+    },
+    createThumbnail: function(finalVideo, videoThumb) {
+        return new Promise(function (fulfill, reject) {
+            console.log("creating thumbnail");
+            var cmd = ffmpeg().input(finalVideo)
+                              .size('640x480')
+                              .inputOptions('-t 2')
+                              .on('error', function(err, stdout, stderr) {
+                                  //
+                              })
+                              .output(videoThumb);
+
+            cmd.run();
+            fulfill();
+        });
     }
 }

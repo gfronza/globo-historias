@@ -1,6 +1,8 @@
 
 $(document).ready(function(){
 
+
+
 	//Open modal
 	$('.open-modal').click(function() {
 		var id = $(this).data('id');
@@ -9,12 +11,22 @@ $(document).ready(function(){
 
 	});
 
-	$('.approve').click(function() {
-		alert('oi');
+	$('.approve').click(function(e) {
+		e.preventDefault();
+		var urlVideo = $(this).data('video_url');
 		var idActive = $(this).data('idactive');
 		var idStory = $(this).data('idstory');
-		$('#media').load('midia.php?id=' + idActive + '&story_id=' + idStory + '&action=approve');
-
+	    $.ajax({
+	      type: 'GET',
+	      url: 'config.php?action=approve&activity_id='+idActive+'&storyId='+idStory,
+	      success: function() {
+	    	// $('[data-url!=""]').first()
+	    	var stories = $('.storyList');
+	    	// alert('oi');
+	    	// $('[data-url!=""]').first().remove();
+	    	console.log(stories);
+	      }
+	    });
 	});
 
 

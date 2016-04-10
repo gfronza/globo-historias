@@ -1,6 +1,6 @@
 var express = require('express');
 var multer = require('multer');
-var fake = require('./fake');
+var cors = require('cors');
 var repository = require('./repository');
 var videoManager = require('./videoManager');
 var bodyParser = require('body-parser');
@@ -10,35 +10,75 @@ var app = express();
 // TODO: use nginx to serve static content.
 app.use('/videos', express.static('storage'));
 
+app.use(cors());
+
+var MEDIA_URL = '/media';
+
 // create application/json parser
 var jsonParser = bodyParser.json()
 
 // create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+var urlencodedParser = bodyParser.urlencoded({ extended: false, limit: '50mb' })
 
 // TODO: use nginx to serve static content.
-app.use('/videos', express.static('storage'));
+app.use(MEDIA_URL, express.static('storage'));
 
 app.route('/composer/create-new-story')
     .post(urlencodedParser, function(req, res) {
-        var videoFilename = videoManager.saveVideo(req.body.audio, req.body.video);
-        var story = repository.createStory(req.body, videoFilename);
+        var newStory = req.body;
 
-        res.json(story);
+        var audioBase64 = newStory.audio;
+        var videoBase64 = newStory.video;
+
+        delete newStory.audio;
+        delete newStory.video;
+
+        var savedVideo = videoManager.saveVideo(audioBase64, videoBase64);
+
+        var protocol = req.protocol;
+        var mediaPrefix = protocol + '://' + req.headers.host;
+
+        newStory.author = {
+          id: 123,
+          name: 'MagicUser',
+          snapshot_url: mediaPrefix + MEDIA_URL + '/ut_magicuser.png'
+        };
+
+        newStory.video_url = mediaPrefix + MEDIA_URL + '/' + savedVideo.videoFilename;
+        newStory.story_thumb = mediaPrefix + MEDIA_URL +'/' + savedVideo.videoThumb;
+        newStory.story_url = new Date().getTime().toString();
+        newStory.time_stamp = new Date().getTime();
+        newStory.matched = false;
+        newStory.matched_activities = [];
+        newStory.banned = false;
+        newStory.reviewed = false;
+        newStory.reactions = {
+            like: 0,
+            sad: 0,
+            love: 0,
+            angry: 0,
+            wow: 0
+        };
+
+        repository.createStory(newStory).then(function(storyCreated) {
+            console.log('Story created!');
+            return repository.matchStoryWithActivities(storyCreated);
+        }).then(function(storyCreated) {
+            console.log('Returning story created');
+            return res.json(storyCreated);
+        });
     });
 
   app.route('/editor/get-activities')
     .get(function(req, res){
-      //call the database to get the activities
-      //insert the following code as callback
-      var err = false;
-      if(err){
-        console.log(err);
-        res.send(err);
-      } else {
-        var response = fake.FAKE_ACTIVITIES;
-        res.send(response);
-      }
+        repository.getActivities().then(function(err, activities) {
+            if(err) {
+                console.log(err);
+                res.send(err);
+            } else {
+                res.json(activities);
+            }
+        });
   });
 
   app.get('/editor/get-stories-by-activity-id', function(req, res){
@@ -47,30 +87,32 @@ app.route('/composer/create-new-story')
       return;
     }
     var activity_id = req.query.activity_id;
-    //call the database to retrieve stories with matched_activities._id == activity_id
-    var response = fake.apiHelper('stories-by-activity', {'activity_id': activity_id});
-    if(response.err){
-      console.log(response.err);
-      res.send(response.err);
-    } else {
-      res.send(response);
-    }
+
+    repository.getStoriesByActivityId(activity_id).then(function(err, stories) {
+        if (err) {
+            console.log(err);
+            res.send(err);
+        } else {
+            res.json(stories);
+        }
+    });
   });
 
   app.route('/editor/get-story-by-id')
     .get(function(req, res){
       var story_id = req.query.story_id;
       if (!story_id) {
-        res.send({failure: 'story_id was not sent'});
-        return;
+          res.send({failure: 'story_id was not sent'});
+          return;
       }
-      var response = fake.apiHelper('story-by-id', {'story_id': story_id});
-      if(response.err) {
-        console.log(response.err);
-        res.send(response.err);
-      } else {
-        res.send(response);
-      }
+      repository.getStoryById(story_id).then(function(err, story) {
+          if (err) {
+              console.log(err);
+              res.send(err);
+          } else {
+              res.json(story);
+          }
+      });
     });
 
   app.route('/widget/get-stories-by-activity-id')
@@ -80,14 +122,14 @@ app.route('/composer/create-new-story')
         res.send({failure: 'activity_id was not sent'});
         return;
       }
-      // var response = fake.apiHelper('widget-stories-by-activity', {activity_id: activity_id});
-      var response = fake.apiHelper('stories-by-activity', {'activity_id': activity_id});
-      if(response.err) {
-        console.log(response.err);
-        res.send(response.err);
-      } else {
-        res.send(response);
-      }
+      repository.getApprovedStoriesByActivityId(activity_id).then(function(err, stories) {
+          if (err) {
+              console.log(err);
+              res.send(err);
+          } else {
+              res.json(stories);
+          }
+      });
     });
 
   app.route('/editor/approve-story-for-activity')
@@ -99,13 +141,14 @@ app.route('/composer/create-new-story')
           console.log('activity_id or story_id was not sent')
           res.send(failure);
         } else {
-          var response = repository.approveStoryForActivity(activity_id, story_id);
-          if(response.err){
-            console.log(response.err);
-            res.send(response.err);
-          } else {
-            res.send(response);
-          }
+          repository.approveStoryForActivity(activity_id, story_id).then(function(err, result) {
+              if (err){
+                console.log(response.err);
+                res.send(err);
+              } else {
+                res.json(result);
+              }
+          });
         }
       });
 
@@ -117,13 +160,14 @@ app.route('/composer/create-new-story')
           console.log('story_id was not sent');
           res.send(failure);
         } else {
-          var response = repository.banStory(story_id);
-          if(response.err){
-            console.log(response.err);
-            res.send(response.err);
-          } else {
-            res.send(response);
-          }
+          var response = repository.banStory(story_id).then(function(err, result) {
+              if (err){
+                  console.log(response.err);
+                  res.send(response.err);
+              } else {
+                  res.json(result);
+              }
+          });
         }
       });
 
@@ -136,13 +180,14 @@ app.route('/composer/create-new-story')
           console.log('activity_id or story_id was not sent');
           res.send(failure);
         } else {
-          var response = repository.denyStoryForActivity(activity_id, story_id);
-          if(response.err){
-            console.log(response.err);
-            res.send(response.err);
-          } else {
-            res.send(response);
-          }
+          var response = repository.denyStoryForActivity(activity_id, story_id).then(function(err, result) {
+              if (err){
+                  console.log(response.err);
+                  res.send(response.err);
+              } else {
+                  res.json(result);
+              }
+          });
         }
       });
 
@@ -156,30 +201,32 @@ app.route('/composer/create-new-story')
           console.log('activity_id or story_id or reaction was not sent');
           res.send(failure);
         } else {
-          var response = repository.reactToStoryForActivity(activity_id, story_id, reaction);
-          if(response.err){
-            console.log(response.err);
-            res.send(response.err);
-          } else {
-            res.send(response);
-          }
+          repository.reactToStoryForActivity(activity_id, story_id, reaction).then(function(err, result) {
+              if (err){
+                  console.log(response.err);
+                  res.send(response.err);
+              } else {
+                  res.json(result);
+              }
+          })
         }
       });
 
-  app.route('/author/stories-by-author-id')
+  app.route('/author/get-stories-by-author-id')
       .get(function(req, res) {
         var author_id = req.query.author_id;
         if (!author_id) {
           res.send({failure: 'author_id was not sent'});
           return;
         } else {
-          var response = repository.storiesByAuthor(author_id);
-          if(response.err){
-            console.log(response.err);
-            res.send(response.err);
-          } else {
-            res.send(response);
-          }
+          var response = repository.getStoriesByAuthor(author_id).then(function(err, stories) {
+              if (err){
+                console.log(response.err);
+                res.send(response.err);
+              } else {
+                res.json(stories);
+              }
+          });
         }
       });
 

@@ -99,8 +99,16 @@ body {
   }
 }
 
+.globo-historia{
+  .tabs{
+    i{
+      vertical-align: sub;
+    }
+  }
+}
+
 .reactions {
-  text-align: left;
+  text-align: center;
   .fa {
     margin: 10px !important;
   }
@@ -267,4 +275,8 @@ body {
 }
 .embed-responsive-4by3 {
   padding-bottom: 75%;
+}
+
+.form {
+  color: #fff;
 }

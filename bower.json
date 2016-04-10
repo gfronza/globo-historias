@@ -4,7 +4,9 @@
   "dependencies": {
     "bootstrap-sass": "~3.3.6",
     "modernizr": "~2.8.3",
-    "angular": "angularjs#^1.5.3"
+    "angular": "angularjs#^1.5.3",
+    "clappr": "^0.2.47",
+    "font-awesome": "fontawesome#^4.5.0"
   },
   "overrides": {
     "bootstrap-sass": {

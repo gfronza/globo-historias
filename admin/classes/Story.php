@@ -11,6 +11,7 @@ class Story{
 	public $banned;
 	public $reviewed;
 	public $reactions;
+	public $storyJson;
 
 	function __construct($dictionary){
 		$this->id = $dictionary->_id;
@@ -23,6 +24,7 @@ class Story{
 		$this->banned = $dictionary->banned;
 		$this->reviewed = $dictionary->reviewed;
 		$this->reactions = $dictionary->reactions;
+		$this->storyJson = json_encode($dictionary);
 	}
 
 	public static function getStoriesByActivityId($id){
@@ -49,8 +51,6 @@ class Story{
 		$paramsArray = array('activity_id' => $activity_id, 'story_id' => $story_id);
 		$response = Parser::serverPostRequest('deny-story-for-activity', $paramsArray);
 	}
-
-
 
 /*	$reactions
       "like": 4,

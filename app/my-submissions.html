@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" ng-app="GloboHistoriasSubmissions">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -11,7 +11,7 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="styles/font-awesome.css">
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css">
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -39,21 +39,17 @@
     </nav>
   </div>
 
-  <div class="section">
+  <div class="section" ng-controller="submissionsCtrl">
     <div class="row">
       <div class="col s12">
-        <h4>Ontem</h4>
-        <div class="card-panel row">
+        <div class="card-panel row" ng-repeat="story in stories">
           <div class="col s12 m4">
             <div class="story-summary-container">
               <div class="row center embed-responsive embed-responsive-16by9">
-                <img class="embed-responsive-item img-responsive" src="http://tinyurl.com/gqgnont" />
+                <img class="embed-responsive-item img-responsive" ng-src="{{::story.story_thumb}}" />
               </div>
               <div class="tags-container">
-                <span class="chip">#hackathonBBB</span>
-                <span class="chip">#hackathonGlobo</span>
-                <span class="chip">#coding</span>
-                <span class="chip">#techMundo</span>
+                <span class="chip" ng-repeat="tag in story.tags" > {{::tag.label}} </span>
               </div>
             </div>
           </div>
@@ -61,56 +57,18 @@
             <div class="activities-container">
               <h5>Sua História na Globo:</h5>
               <ul>
-              <li class="activity">
-                <a href="http://www.techtudo.com.br/noticias/noticia/2016/04/hackathon-globo-comeca-2-edicao-do-evento-com-novidades-no-bbb.html"><h5>Segunda Hackathon da Globo Acaba de Começar</h5></a>
+              <li class="activity" ng-repeat="activity in matched_activities" >
+                <a ng-href="{{::activity.link_url}}"><h5>{{::activity.title}}</h5></a>
                 <div class="reactions-container">
                   <div class="reactions">
-                    <a class="active"><i class="like"></i> <span>0</span></a>
-                    <a class="active"><i class="love"></i> <span>0</span></a>
-                    <a class="active"><i class="wow"></i> <span>0</span></a>
-                    <a class="active"><i class="sad"></i> <span>0</span></a>
-                    <a class="active"><i class="angry"></i> <span>0</span></a>
+                    <span class="active"><i class="like"></i> <span>{{::story.reactions.like}}</span></span>
+                    <span class="active"><i class="love"></i> <span>{{::story.reactions.love}}</span></span>
+                    <span class="active"><i class="wow"></i> <span>{{::story.reactions.wow}}</span></span>
+                    <span class="active"><i class="sad"></i> <span>{{::story.reactions.sad}}</span></span>
+                    <span class="active"><i class="angry"></i> <span>{{::story.reactions.angry}}</span></span>
                   </div>
                 </div>
                 <div class="divider"></div>
-              </li>
-              <li class="activity">
-                <a href="http://www.techtudo.com.br/noticias/noticia/2016/04/hackathon-globo-comeca-2-edicao-do-evento-com-novidades-no-bbb.html"><h5>Segunda Hackathon da Globo Acaba de Começar</h5></a>
-                <div class="reactions-container">
-                  <div class="reactions">
-                    <a class="active"><i class="like"></i> <span>0</span></a>
-                    <a class="active"><i class="love"></i> <span>0</span></a>
-                    <a class="active"><i class="wow"></i> <span>0</span></a>
-                    <a class="active"><i class="sad"></i> <span>0</span></a>
-                    <a class="active"><i class="angry"></i> <span>0</span></a>
-                  </div>
-                </div>
-                <div class="divider"></div>
-              </li>
-              <li class="activity">
-                <a href="http://www.techtudo.com.br/noticias/noticia/2016/04/hackathon-globo-comeca-2-edicao-do-evento-com-novidades-no-bbb.html"><h5>Segunda Hackathon da Globo Acaba de Começar</h5></a>
-                <div class="reactions-container">
-                  <div class="reactions">
-                    <a class="active"><i class="like"></i> <span>0</span></a>
-                    <a class="active"><i class="love"></i> <span>0</span></a>
-                    <a class="active"><i class="wow"></i> <span>0</span></a>
-                    <a class="active"><i class="sad"></i> <span>0</span></a>
-                    <a class="active"><i class="angry"></i> <span>0</span></a>
-                  </div>
-                </div>
-                <div class="divider"></div>
-              </li>
-              <li class="activity">
-                <a href="http://www.techtudo.com.br/noticias/noticia/2016/04/hackathon-globo-comeca-2-edicao-do-evento-com-novidades-no-bbb.html"><h5>Segunda Hackathon da Globo Acaba de Começar</h5></a>
-                <div class="reactions-container">
-                  <div class="reactions">
-                    <a class="active"><i class="like"></i> <span>0</span></a>
-                    <a class="active"><i class="love"></i> <span>0</span></a>
-                    <a class="active"><i class="wow"></i> <span>0</span></a>
-                    <a class="active"><i class="sad"></i> <span>0</span></a>
-                    <a class="active"><i class="angry"></i> <span>0</span></a>
-                  </div>
-                </div>
               </li>
               </ul>
             </div>
@@ -131,6 +89,8 @@
   <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/clappr/src/main.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -140,6 +100,10 @@
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/app.js -->
+    <script src="scripts/app.js"></script>
     <!-- endbuild -->
   </body>
 </html>
