@@ -79,7 +79,7 @@ app.controller("storyCtrl" , ['$scope', '$http', function($scope, $http){
       return true;
     }
   }
-  
+
   $scope.abrirVideo = function(video) {
     var player = new Clappr.Player({source: video, parentId: "#player"});
     // alert(video);
@@ -154,3 +154,20 @@ app.directive('ngHold', ['$timeout', function($timeout) {
       }
     }
   }]);
+
+var app = angular.module("GloboHistoriasSubmissions" , []);
+
+app.controller("submissionsCtrl" , ['$scope', '$http', function($scope, $http){
+  //$scope.stories = [{"_id":283239819393,"author":{"id":321321321,"name":"Gabriel","snapshot_url":"foto_do_user.jpg"},"video_url":"samplelink.mp4","story_url":"address-in-which-the-video-will-be-available","story_thumb":"url-to-img.jpg","tags":[],"time_stamp":"1460083693249","matched":true,"matched_activities":[],"banned":false,"reviewed":true,"reactions":{"like":4,"sad":2,"love":3,"angry":1,"wow":0}},{"_id":283239819393,"author":{"id":321321321,"name":"Gabriel","snapshot_url":"foto_do_user.jpg"},"video_url":"samplelink.mp4","story_url":"address-in-which-the-video-will-be-available","story_thumb":"url-to-img.jpg","tags":[],"time_stamp":"1460083693249","matched":true,"matched_activities":[],"banned":false,"reviewed":true,"reactions":{"like":4,"sad":2,"love":3,"angry":2,"wow":0}},{"_id":283239819393,"author":{"id":321321321,"name":"Gabriel","snapshot_url":"foto_do_user.jpg"},"video_url":"samplelink.mp4","story_url":"address-in-which-the-video-will-be-available","story_thumb":"url-to-img.jpg","tags":[],"time_stamp":"1460083693249","matched":true,"matched_activities":[],"banned":false,"reviewed":true,"reactions":{"like":4,"sad":2,"love":3,"angry":2,"wow":0}}];
+  $scope.stories = [];
+  var webserviceIP = window.api_url;
+  $http.get(webserviceIP + '/author/get-stories-by-author-id?author_id=312213213213')
+    .success(function(data) {
+        $scope.stories = data;
+        // console.log(data);
+    })
+    .error(function(data) {
+        console.log('Error: ' + data);
+  });
+
+}]);

@@ -1,11 +1,13 @@
 var Xray = require('x-ray');
 var x = Xray();
 
-x('http://g1.globo.com/politica/', '.feed-post', [{
+var ROOT = 'http://g1.globo.com/politica/';
+
+x(ROOT, '.feed-post', [{
   title: '.feed-post-body-title',
   subtitle: '.feed-post-body-resumo',
-  activity_url: 'a@href',
+  activity_url: '.feed-text-wrapper a@href',
 }])
   .paginate('.load-more a@href')
   .limit(10)
-  .write('results.json')
+  .write('rawResults.json')

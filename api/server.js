@@ -212,7 +212,7 @@ app.route('/composer/create-new-story')
         }
       });
 
-  app.route('/author/stories-by-author-id')
+  app.route('/author/get-stories-by-author-id')
       .get(function(req, res) {
         var author_id = req.query.author_id;
         if (!author_id) {
