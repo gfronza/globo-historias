@@ -10,6 +10,10 @@ $icon-font-path: '../fonts/';
 
 body {
   font-size: 16px;
+
+  a {
+    color: #ee3d40;
+  }
 }
 
 .icon-block {
@@ -17,6 +21,16 @@ body {
 }
 .icon-block .material-icons {
   font-size: inherit;
+}
+.chip {
+  margin:  0 0 5px 0;
+}
+
+.nav-wrapper {
+  i {
+    font-size: 30px;
+    margin: 0px 10px;
+  }
 }
 
 .img-responsive {
@@ -87,6 +101,9 @@ body {
 
 .reactions {
   text-align: left;
+  .fa {
+    margin: 10px !important;
+  }
   a {
     margin: 0 5px;
     display: inline-block;
@@ -216,6 +233,13 @@ body {
 
 .small-title {
   color: #fff;
+}
+
+.activities-container {
+  ul {
+    overflow: auto;
+    max-height: 320px;
+  }
 }
 
 .embed-responsive {

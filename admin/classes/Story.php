@@ -36,25 +36,19 @@ class Story{
 
 
 	public static function approveStory($activity_id, $story_id){
-		Parser::serverPostRequest($serverName, $paramsArray);
+		$paramsArray = array('activity_id' => $activity_id, 'story_id' => $story_id);
+		$response = Parser::serverPostRequest('approve-story-for-activity', $paramsArray);
 	}
 
 	public static function banStory($story_id){
-
+		$paramsArray = array('story_id' => $story_id);
+		$response = Parser::serverPostRequest('ban_story', $paramsArray);
 	}	
 
 	public static function denyStory($activity_id, $story_id){
-
+		$paramsArray = array('activity_id' => $activity_id, 'story_id' => $story_id);
+		$response = Parser::serverPostRequest('deny-story-for-activity', $paramsArray);
 	}
-
-POST editor/approve-story-for-activity.json
-  activity_id, story_id
-
-POST editor/ban_story.json
-  story_id
-
-POST editor/deny-story-for-activity.json
-  activity_id, story_id
 
 
 
