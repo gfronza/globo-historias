@@ -14,12 +14,14 @@
 
 			</div>
 			<div class="buttonssection">
-        <div class="hold_trigger virecbutton" ng-if="videoready" ng-mousedown='startRecrodBut1()' ng-mouseup="stopRecBut1()">Gravar</div>
+        <div class="hold_trigger center-align btn-floating btn-large red" style="bottom: 75px; right: 50%; margin-right: -40px;
+    position: absolute;" ng-if="videoready" ng-click="toggle()"><i class="fa fa-camera"></i></div>
+        <!-- <div class="hold_trigger virecbutton" ng-if="videoready" ng-click="toggle()" ng-mousedown='startRecrodBut1()' ng-mouseup="stopRecBut1()">Gravar</div> -->
 				<!-- <div class="virecbutton" ng-if="videoready"  ng-click="startRecrodBut1()"  >Start</div> -->
 				<!-- <div class="virecbutton"  ng-if="videoready" ng-click="stopRecBut1()" 	ng-class="recordingstarted ? 'videoisbeingrecorded' : '' " >Stop</div> -->
-				<div class="virecbutton" ng-if="videoready" ng-click="playback()" >Play</div>
+				<!-- <div class="virecbutton" ng-if="videoready" ng-click="playback()" >Play</div>
 				<div class="virecbutton" ng-if="videoready" ng-click="clearrecording()"  >Clear</div>
-				<div class="virecbutton" ng-if="videoready" ng-click="uploadrecord()" ng-class="videoisavailabletoplay ? 'canuploadvideo' : ''" >Upload</div>
+				<div class="virecbutton" ng-if="videoready" ng-click="uploadrecord()" ng-class="videoisavailabletoplay ? 'canuploadvideo' : ''" >Upload</div> -->
 
 		        <div ng-if="uploadpresentage" class="uploadloadingscreen" >
 		        	<div class="chilcuploadscreen">{{uploadpresentage}}%</div>

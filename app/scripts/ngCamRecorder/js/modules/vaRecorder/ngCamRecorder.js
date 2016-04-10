@@ -90,6 +90,14 @@ vaRecorder.directive("ngcamcecorder" , function(){
                 }
          );
 
+         $scope.toggle = function(){
+           if(!$scope.recordingstarted){
+             $scope.startRecrodBut1();
+           }
+           else{
+             $scope.stopRecBut1();
+           }
+         }
 
          $scope.startRecrodBut1 =  function(){
                 console.log("iniciou gravacao");
