@@ -18,6 +18,11 @@ $(window).load(function () {
     $('#media').fadeIn(600);
   });
 
+  $('#add-tag').on('click', function() {
+    var texto = $("#tag_name").val();
+    $("#chips").append("<li class='chip'>" + texto  + "<i class='fa fa-close material-icons'></i></li>");
+  });
+
   $('.send-modal').on('click', function() {
     // converts blob to base64
     var blobToBase64 = function(audioblob, videoblob, cb) {
