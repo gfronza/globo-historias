@@ -7,7 +7,7 @@ app.controller("storyCtrl" , ['$scope', '$http', function($scope, $http){
   $http.get(webserviceIP + '/widget/get-stories-by-activity-id?activity_id=321362138921973')
     .success(function(data) {
         $scope.stories = data;
-        console.log(data);
+        // console.log(data);
     })
     .error(function(data) {
         console.log('Error: ' + data);
@@ -24,7 +24,63 @@ app.controller("storyCtrl" , ['$scope', '$http', function($scope, $http){
     var count = story.reactions.like + story.reactions.love + story.reactions.wow + story.reactions.sad + story.reactions.angry;
     return count;
   }
+
+  $scope.filterLike = function(story){
+    var item = story;
+    var isLike = item.reactions.like >= item.reactions.love &&
+    item.reactions.like >= item.reactions.wow &&
+    item.reactions.like >= item.reactions.sad &&
+    item.reactions.like >= item.reactions.angry;
+    if ( isLike ) {
+      return true;
+    }
+  }
+
+  $scope.filterLove = function(story){
+    var item = story;
+    var isLove = item.reactions.love >= item.reactions.live &&
+    item.reactions.love >= item.reactions.wow &&
+    item.reactions.love >= item.reactions.sad &&
+    item.reactions.love >= item.reactions.angry;
+    if ( isLove ) {
+      return true;
+    }
+  }
+
+  $scope.filterWow = function(story){
+    var item = story;
+    var isWow = item.reactions.wow >= item.reactions.live &&
+    item.reactions.wow >= item.reactions.love &&
+    item.reactions.wow >= item.reactions.sad &&
+    item.reactions.wow >= item.reactions.angry;
+    if ( isWow ) {
+      return true;
+    }
+  }
+
+  $scope.filterWow = function(story){
+    var item = story;
+    var isSad = item.reactions.sad >= item.reactions.live &&
+    item.reactions.sad >= item.reactions.love &&
+    item.reactions.sad >= item.reactions.wow &&
+    item.reactions.sad >= item.reactions.angry;
+    if ( isSad ) {
+      return true;
+    }
+  }
+
+  $scope.filterWow = function(story){
+    var item = story;
+    var isAngry = item.reactions.angry >= item.reactions.live &&
+    item.reactions.angry >= item.reactions.love &&
+    item.reactions.angry >= item.reactions.wow &&
+    item.reactions.angry >= item.reactions.sad;
+    if ( isAngry ) {
+      return true;
+    }
+  }
 }]);
+
 
 var app = angular.module("GloboHistoriasRec" , ['ngCamRecorder']);
 
@@ -63,7 +119,7 @@ app.controller("cameraCtrl" , ['$scope', function($scope){
 	$scope.camconfiguration = configuration;
 }]);
 
-directive('ngHold', ['$timeout', function($timeout) {
+app.directive('ngHold', ['$timeout', function($timeout) {
     return {
       restrict: 'A',
       link: function(scope, el, attrs) {
