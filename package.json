@@ -43,12 +43,13 @@
   },
   "dependencies": {
     "body-parser": "^1.15.0",
-    "fluent-ffmpeg": "^2.0.1",
+    "cors": "^2.7.1",
     "express": "v4.13.4",
+    "fluent-ffmpeg": "^2.0.1",
     "multer": "^1.1.0",
-    "through2": "~2.0.1",
+    "node-sass": "~3.4.2",
     "object-assign": "~4.0.1",
-    "vinyl-sourcemaps-apply": "~0.2.1",
-    "node-sass": "~3.4.2"
+    "through2": "~2.0.1",
+    "vinyl-sourcemaps-apply": "~0.2.1"
   }
 }
