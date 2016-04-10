@@ -26,7 +26,7 @@
   </head>
   <body>
   <div class="navbar-fixed">
-    <nav class="red">
+    <nav class="cyan">
       <div class="nav-wrapper">
         <a href="index.html" class="brand-logo center"><img src="images/g1.png" alt="G1" /></a>
         <!--
@@ -99,10 +99,10 @@
               </ul>
             </div>
             <div id="tab_like" class="col s12">
-              <ul class="globo-historia-list row" ng-controller="storyCtrl">
+              <ul class="globo-historia-list row">
                 <li ng-repeat="story in stories | orderBy:'reactions.like':true | filter:filterLike as count" class="col s4 m2">
                   <div>
-                    <a ng-click="abrirVideo(story.story_thumb)" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                    <a ng-click="abrirVideo(story.video_url)" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
                   </div>
                 </li>
               </ul>
@@ -154,7 +154,7 @@
     <div class="divider"></div>
   </div>
 
-  <footer class="page-footer red">
+  <footer class="page-footer cyan">
     <div class="footer-copyright">
       <div class="container">
         Hackathon Globo 2016 - Made with <i class="fa fa-heart"></i> Richard, Gemano, Betina, Arthur e Gabriel
@@ -173,7 +173,7 @@
             </div>
             <br>
             <div class="center">
-              <!--<a class="waves-effect waves-light btn red"><i class="fa fa-ban"></i> Banir</a> | <a class="waves-effect waves-light btn grey"><i class="fa fa-thumbs-down"></i> Rejeitar</a> | <a class="waves-effect waves-light btn green"><i class="fa fa-check"></i> Aceitar</a>-->
+              <!--<a class="waves-effect waves-light btn cyan"><i class="fa fa-ban"></i> Banir</a> | <a class="waves-effect waves-light btn grey"><i class="fa fa-thumbs-down"></i> Rejeitar</a> | <a class="waves-effect waves-light btn green"><i class="fa fa-check"></i> Aceitar</a>-->
               <div class="reactions">
                 <a href="" class="active"><i class="like"></i> <span>0</span></a>
                 <a href=""><i class="love"></i> <span>0</span></a>
