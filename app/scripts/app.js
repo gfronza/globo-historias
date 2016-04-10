@@ -7,8 +7,8 @@ app.controller("storyCtrl" , function ($scope) {
     var now = new Date().getTime();
     var timeDiff = Math.abs(now - story.time_stamp);
     var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-    console.log(story.time_stamp):
-    console.log(diffDays):
+    console.log(story.time_stamp);
+    console.log(diffDays);
     return diffDays;
   }
 
