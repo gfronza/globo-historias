@@ -44,6 +44,9 @@ app.route('/composer/create-new-story')
           snapshot_url: mediaPrefix + MEDIA_URL + '/ut_magicuser.png'
         };
 
+        newStory.tags = newStory['tags[]'];
+        delete newStory['tags[]'];
+
         newStory.video_url = mediaPrefix + MEDIA_URL + '/' + savedVideo.videoFilename;
         newStory.story_thumb = mediaPrefix + MEDIA_URL +'/' + savedVideo.videoThumb;
         newStory.story_url = new Date().getTime().toString();

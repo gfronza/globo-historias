@@ -9,6 +9,8 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
     <link rel="stylesheet" type="text/css" href="scripts/ngCamRecorder/js/modules/vaRecorder/css/virecorder.css">
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css">
+
     <style>
       .video-area{
         width: 100%;
@@ -16,7 +18,6 @@
     </style>
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css">
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -24,7 +25,6 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
@@ -43,30 +43,26 @@
 
   <div id="media">
     <div class="container">
-      <div class="section form center">
+      <div class="section center">
         <div class="row">
-          <h4>Finalizar Post</h4>
-          <p>Adicione tags ao seu vídeo:</p>
-          <div class="divider"></div>
-
-          <div class="input-field col s12">
-            <input placeholder="Placeholder" id="tag_name" type="text" class="validate">
-            <label for="first_name">Inserir Tags</label>
-            <button id="add-tag" class="btn wave yellow">Adicionar <i class="fa fa-plus"></i></button>
+          <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">Adicione tags ao seu vídeo:</span>
+                <div class="input-field col s12">
+                  <input placeholder="politica, governo" id="tag_name" type="text" class="center">
+                </div>
+                <br />
+                <br />
+                <ul id="chips">
+                </ul>
+              </div>
+              <div class="card-action">
+                <button id="add-tag" class="waves-effect btn-flat cyan">Adicionar <i class="fa fa-plus"></i></button>
+                <button class="btn btn-lg cyan send-modal">Contar História <i class="fa fa-send"></i></button>
+              </div>
+            </div>
           </div>
-          <br />
-          <br />
-          <ul id="chips">
-            <!--
-            <li class="chip">
-              tag 1
-              <i class="fa fa-close material-icons"></i>
-            </li>
-            -->
-          </ul>
-        </div>
-        <div class="row">
-          <button class="btn btn-lg blue send-modal"><i class="fa fa-success"></i> Enviar Tags</button>
         </div>
       </div>
     </div>
@@ -77,6 +73,7 @@
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/clappr/src/main.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -97,5 +94,8 @@
     <!-- build:js scripts/app.js -->
     <script src="scripts/app.js"></script>
     <!-- endbuild -->
+  </body>
+</html>
+ <!-- endbuild -->
   </body>
 </html>

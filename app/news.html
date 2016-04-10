@@ -11,7 +11,6 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css">
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -26,7 +25,7 @@
   </head>
   <body>
   <div class="navbar-fixed">
-    <nav class="cyan">
+    <nav class="red">
       <div class="nav-wrapper">
         <a href="index.html" class="brand-logo center"><img src="images/g1.png" alt="G1" /></a>
         <!--
@@ -91,11 +90,11 @@
             <h5 class="subtitle">{{stories.length}} Histórias</h5>
             <div class="col s12">
               <ul class="tabs">
-                <li class="tab col s3"><a class="active reactions" href="#tab_like"><i class="like"></i> {{(stories|filter:filterLike).length}}</a></li>
-                <li class="tab col s3"><a class="reactions" href="#tab_love"><i class="love"></i> {{(stories|filter:filterLove).length}}</a></li>
-                <li class="tab col s3"><a class="reactions" href="#tab_wow"><i class="wow"></i> {{(stories|filter:filterWow).length}}</a></li>
-                <li class="tab col s3"><a class="reactions" href="#tab_sad"><i class="sad"></i> {{(stories|filter:filterSad).length}}</a></li>
-                <li class="tab col s3"><a class="reactions" href="#tab_angry"><i class="angry"></i> {{(stories|filter:filterAngry).length}}</a></li>
+                <li class="tab"><a class="active reactions" href="#tab_like"><i class="like"></i> {{(stories|filter:filterLike).length}}</a></li>
+                <li class="tab"><a class="reactions" href="#tab_love"><i class="love"></i> {{(stories|filter:filterLove).length}}</a></li>
+                <li class="tab"><a class="reactions" href="#tab_wow"><i class="wow"></i> {{(stories|filter:filterWow).length}}</a></li>
+                <li class="tab"><a class="reactions" href="#tab_sad"><i class="sad"></i> {{(stories|filter:filterSad).length}}</a></li>
+                <li class="tab"><a class="reactions" href="#tab_angry"><i class="angry"></i> {{(stories|filter:filterAngry).length}}</a></li>
               </ul>
             </div>
             <div id="tab_like" class="col s12">
@@ -223,7 +222,7 @@
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
-
+    <script src="/bower_components/clappr/src/main.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
