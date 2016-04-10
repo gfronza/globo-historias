@@ -464,7 +464,8 @@
   {
     "title": "Tribunal Superior Eleitoral confirma Gilmar Mendes como novo presidente",
     "subtitle": "Ministro do Supremo tomará posse no cargo no próximo dia 12 de maio.\nLuiz Fux exercerá cargo de vice-presidente pelos próximos dois anos.",
-    "activity_url": "http://g1.globo.com/politica/noticia/2016/04/tribunal-superior-eleitoral-confirma-gilmar-mendes-como-novo-presidente.html"
+    "activity_url": "http://g1.globo.com/politica/noticia/2016/04/tribunal-superior-eleitoral-confirma-gilmar-mendes-como-novo-presidente.html",
+    "tags": ["governo", "impeachment"]
   },
   {
     "title": "STF nega pedido de Cunha e libera depoimentos no Conselho de Ética",
@@ -473,12 +474,15 @@
   },
   {
     "title": "Charge: Mercado aquecido...",
-    "activity_url": "http://g1.globo.com/politica/noticia/2016/04/charge-mercado-aquecido.html"
+    "subtitle": "*Renato Peters tem 41 anos e é repórter de esporte da TV Globo",
+    "activity_url": "http://g1.globo.com/politica/noticia/2016/04/charge-mercado-aquecido.html",
+    "tags": ["charge", "dolar", "governo"]
   },
   {
     "title": "Delação de empreiteira relata propina para campanhas de Dilma, diz jornal",
     "subtitle": "Depoimentos são de executivos da Andrade Gutierrez, segundo a 'Folha'.\nExpectativa é que o Supremo homologue delação nos próximos dias.",
-    "activity_url": "http://g1.globo.com/politica/operacao-lava-jato/noticia/2016/04/andrade-gutierrez-afirma-que-propina-foi-para-campanha-de-dilma-diz-jornal.html"
+    "activity_url": "http://g1.globo.com/politica/operacao-lava-jato/noticia/2016/04/andrade-gutierrez-afirma-que-propina-foi-para-campanha-de-dilma-diz-jornal.html",
+    "tags": ["delação", "corrupcao", "dilma"]
   },
   {
     "title": "Sancionada lei que disciplina criação de empresa júnior nas universidades ",
@@ -486,7 +490,9 @@
     "activity_url": "http://g1.globo.com/educacao/"
   },
   {
-    "title": "Relator vê indício de crime de Dilma; Andrade admite corrupção na campanha. Jornais de quinta (7)",
-    "activity_url": "http://g1.globo.com/politica/blog/matheus-leitao/"
+    "title": "Estado de SP registra 70 mortes por H1N1 e 534 casos",
+    "subtitle": "Capital paulista registrou 17 mortes e 201 pessoas infectadas em 2016. Campanha de vacinação foi antecipada na Região Metropolitana. Do G1 São Paulo",
+    "activity_url": "http://g1.globo.com/sao-paulo/noticia/2016/04/estado-de-sp-registra-70-mortes-por-h1n1-e-534-casos.html",
+    "tags": ["gripe", "h1n1", "SP"]
   }
 ]
