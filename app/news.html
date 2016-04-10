@@ -153,10 +153,10 @@
     <div class="divider"></div>
   </div>
 
-  <footer class="page-footer cyan">
+  <footer class="page-footer red">
     <div class="footer-copyright">
       <div class="container">
-        Hackathon Globo 2016 - Made with <i class="fa fa-heart"></i> Richard, Gemano, Betina, Arthur e Gabriel
+        Hackathon Globo 2016 - Made with <i class="fa fa-heart"></i> Richard, Germano, Betina, Arthur e Gabriel
       </div>
     </div>
   </footer>
@@ -184,33 +184,13 @@
           </div>
           <ul class="col s12 l3 video-list">
             <!-- row thumbnail -->
-            <li class="row">
+            <li class="row" ng-repeat="story in stories">
               <div class="col s6">
                 <div class="embed-responsive embed-responsive-16by9">
-                  <img src="http://placehold.it/320x240" class="embed-responsive-item" />
+                  <img ng-src="{{::story.story_thumb}}" class="embed-responsive-item" />
                 </div>
               </div>
-              <div class="col s6 white-text small-title">Título próximo vídeo</div>
-            </li>
-
-            <!-- row thumbnail -->
-            <li class="row">
-              <div class="col s6">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="http://placehold.it/320x240" class="embed-responsive-item" />
-                </div>
-              </div>
-              <div class="col s6 white-text small-title">Título próximo vídeo</div>
-            </li>
-
-            <!-- row thumbnail -->
-            <li class="row">
-              <div class="col s6">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="http://placehold.it/320x240" class="embed-responsive-item" />
-                </div>
-              </div>
-              <div class="col s6 white-text small-title">Título próximo vídeo</div>
+              <div class="col s6 white-text small-title">{{::story.title}}</div>
             </li>
           </ul>
         </div>
