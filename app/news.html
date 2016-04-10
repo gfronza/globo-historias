@@ -90,7 +90,7 @@
           <ul class="globo-historia-list">
             <li class="row">
               <div class="col s3 m2">
-                <a href=""><img src="http://placehold.it/100x75" class="img-responsive"></a>
+                <a href="#" class="open-modal"><img src="http://placehold.it/100x75" class="img-responsive"></a>
               </div>
               <div class="col s9 m10">
                 <p>
@@ -111,7 +111,7 @@
             </li>
             <li class="row">
               <div class="col s3 m2">
-                <a href=""><img src="http://placehold.it/100x75" class="img-responsive"></a>
+                <a href="#" class="open-modal"><img src="http://placehold.it/100x75" class="img-responsive"></a>
               </div>
               <div class="col s9 m10">
                 <p>
@@ -132,7 +132,7 @@
             </li>
             <li class="row">
               <div class="col s3 m2">
-                <a href=""><img src="http://placehold.it/100x75" class="img-responsive"></a>
+                <a href="#" class="open-modal"><img src="http://placehold.it/100x75" class="img-responsive"></a>
               </div>
               <div class="col s9 m10">
                 <p>
@@ -171,55 +171,60 @@
   </footer>
 
   <div id="media">
-    <div class="container ">
+    <div class="container">
       <div class="section">
         <div class="row">
-          <div class="col s12 m12 white-text center">
-            <h4>Globo Histórias Logo</h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12 m9">
+          <div class="col s12 l9">
             <h5 class="" style="color:#a0a0a0;">Hackathon Globo</h5>
-            <div class="video-player">
-              <div id="player"></div>
+            <div class="video-player embed-responsive embed-responsive-16by9">
+              <div id="player" class="embed-responsive-item"></div>
               <script>
                 var player = new Clappr.Player({source: "http://your.video/here.mp4", parentId: "#player"});
               </script>
             </div>
             <br>
             <div class="center">
-              <a class="waves-effect waves-light btn red"><i class="material-icons right">close</i>Banir</a> | <a class="waves-effect waves-light btn grey"><i class="material-icons right">error_outline</i>Rejeitar</a> | <a class="waves-effect waves-light btn green"><i class="material-icons right">done</i>Aceitar</a>
+              <!--<a class="waves-effect waves-light btn red"><i class="fa fa-ban"></i> Banir</a> | <a class="waves-effect waves-light btn grey"><i class="fa fa-thumbs-down"></i> Rejeitar</a> | <a class="waves-effect waves-light btn green"><i class="fa fa-check"></i> Aceitar</a>-->
+              <div class="reactions">
+                <a href="" class="active"><i class="like"></i> <span>0</span></a>
+                <a href=""><i class="love"></i> <span>0</span></a>
+                <a href=""><i class="wow"></i> <span>0</span></a>
+                <a href=""><i class="sad"></i> <span>0</span></a>
+                <a href=""><i class="angry"></i> <span>0</span></a>
+              </div>
             </div>
           </div>
-          <div class="col s12 m3">
+          <ul class="col s12 l3 video-list">
             <!-- row thumbnail -->
-            <div class="row">
-              <div class="col m5">
-                <div class="thumbnail" style="background-image:url('http://freelinkedinbackgrounds.com/wp-content/uploads/2014/12/Nature-005.jpg');"></div>
+            <li class="row">
+              <div class="col s6">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <img src="http://placehold.it/320x240" class="embed-responsive-item" />
+                </div>
               </div>
-              <div class="col m7 white-text small-title">Título próximo vídeo</div>
-              <div class="divider"></div>
-            </div>
+              <div class="col s6 white-text small-title">Título próximo vídeo</div>
+            </li>
 
             <!-- row thumbnail -->
-            <div class="row">
-              <div class="col m5">
-                <div class="thumbnail" style="background-image:url('http://freelinkedinbackgrounds.com/wp-content/uploads/2014/12/Nature-005.jpg');"></div>
+            <li class="row">
+              <div class="col s6">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <img src="http://placehold.it/320x240" class="embed-responsive-item" />
+                </div>
               </div>
-              <div class="col m7 white-text small-title">Título próximo vídeo</div>
-              <div class="divider"></div>
-            </div>
+              <div class="col s6 white-text small-title">Título próximo vídeo</div>
+            </li>
 
             <!-- row thumbnail -->
-            <div class="row">
-              <div class="col m5">
-                <div class="thumbnail" style="background-image:url('http://freelinkedinbackgrounds.com/wp-content/uploads/2014/12/Nature-005.jpg');"></div>
+            <li class="row">
+              <div class="col s6">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <img src="http://placehold.it/320x240" class="embed-responsive-item" />
+                </div>
               </div>
-              <div class="col m7 white-text small-title">Título próximo vídeo</div>
-              <div class="divider"></div>
-            </div>
-          </div>
+              <div class="col s6 white-text small-title">Título próximo vídeo</div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
