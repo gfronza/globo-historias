@@ -4,16 +4,10 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Hackathon Globo - Record</title>
+    <title>Hackathon Globo - Upload</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
-    <link rel="stylesheet" type="text/css" href="scripts/ngCamRecorder/js/modules/vaRecorder/css/virecorder.css">
-    <style>
-      .video-area{
-        width: 100%;
-      }
-    </style>
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css">
@@ -37,7 +31,7 @@
             <img src="images/g1.png" alt="Globo Histórias" />
           </a>
           <ul class="left hide-on-med-and-down">
-            <li><a href="index.html"><i class="fa fa-arrow-left"></i></a></li>
+            <li><a href="record.html"><i class="fa fa-arrow-left"></i></a></li>
           </ul>
         </div>
       </div>
@@ -45,20 +39,54 @@
   </div>
 
   <div class="section">
-    <h4>Gravação</h4>
+    <h4>Upload</h4>
     <div class="row">
-      <div class="video-area embed-responsive embed-responsive-16by9" ng-controller="cameraCtrl">
-         <!-- here is how you use the module it -->
-         <ngcamcecorder configuration="camconfiguration"></ngcamcecorder>
-
-         <div ng-init="camconfiguration.init()" id="initvideo" class="embed-responsive-item"></div>
-         <!-- <img ng-src="{{camconfiguration.output.recordingthumb}}" /> -->
+      <div class="video-player embed-responsive embed-responsive-16by9">
+        <div id="player" class="embed-responsive-item"></div>
+        <script>
+          var player = new Clappr.Player({source: "http://your.video/here.mp4", parentId: "#player"});
+        </script>
       </div>
+    </div>
+    <div class="row">
+      <div class="col s6 center">
+        <a href="index.html" class="btn btn-large waves-light red"><i class="fa fa-close"></i> Cancelar</a>
+      </div>
+      <div class="col s6 center">
+        <button class="btn btn-large waves-light green open-modal"><i class="fa fa-check"></i> Finalizar</button>
+      </div>
+    </div>
 
-      <div class="fixed-action-btn horizontal" style="bottom: 75px; right: 50%; margin-right: -40px;">
-        <a class="btn-floating btn-large red" href="upload.html">
-          <i class="large material-icons">rec</i>
-        </a>
+    <div id="media">
+      <div class="container">
+        <div class="section form center">
+          <div class="row">
+            <h4>Finalizar Post</h4>
+            <p>Adicione tags ao seu vídeo:</p>
+            <div class="divider"></div>
+
+            <div class="input-field col s12">
+              <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
+
+            <div class="chip">
+              tag 1
+              <i class="fa fa-close material-icons"></i>
+            </div>
+            <div class="chip">
+              tag 1
+              <i class="fa fa-close material-icons"></i>
+            </div>
+            <div class="chip">
+              tag 1
+              <i class="fa fa-close material-icons"></i>
+            </div>
+          </div>
+          <div class="row">
+            <a href="" class="btn btn-lg blue"><i class="fa fa-success"></i> Adicionar Tags</a>
+          </div>
+        </div>
       </div>
     </div>
 
