@@ -25,6 +25,12 @@ app.controller("storyCtrl" , ['$scope', '$http', function($scope, $http){
     return count;
   }
 
+  $scope.differentVideo = function(story){
+    if(story.video_url != $scope.video_run){
+      return true;
+    }
+  }
+
   $scope.filterLike = function(story){
     var item = story;
     var isLike = item.reactions.like >= item.reactions.love &&
@@ -82,6 +88,7 @@ app.controller("storyCtrl" , ['$scope', '$http', function($scope, $http){
 
   $scope.abrirVideo = function(video) {
     var player = new Clappr.Player({source: video, parentId: "#player", autoPlay: true});
+    $scope.video_run = video;
     // alert(video);
   };
 }]);

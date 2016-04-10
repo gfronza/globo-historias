@@ -172,9 +172,9 @@
               </div>
             </div>
           </div>
-          <ul class="col s12 l3 video-list">
+          <ul class="col s12 l3 video-list" ng-controller="storyCtrl">
             <!-- row thumbnail -->
-            <li class="row" ng-repeat="story in stories">
+            <li class="row" ng-repeat="story in stories | filter:differentVideo">
               <div class="col s6">
                 <div class="embed-responsive embed-responsive-16by9">
                   <img ng-src="{{::story.story_thumb}}" class="embed-responsive-item" />
