@@ -4,6 +4,11 @@ module.exports = {
       var stories = [
         {
           _id: 283239819393,
+          author: {
+            id: 321321321,
+            name: 'Gabriel',
+            snapshot_url: 'foto_do_user.jpg'
+          },
           video_url: 'samplelink.mp4',
           story_url: 'address-in-which-the-video-will-be-available',
           story_thumb: 'url-to-img.jpg',
@@ -23,6 +28,11 @@ module.exports = {
         },
         {
           _id: 283239819393,
+          author: {
+            id: 321321321,
+            name: 'Gabriel',
+            snapshot_url: 'foto_do_user.jpg'
+          },
           video_url: 'samplelink.mp4',
           story_url: 'address-in-which-the-video-will-be-available',
           story_thumb: 'url-to-img.jpg',
@@ -42,6 +52,11 @@ module.exports = {
         },
         {
           _id: 283239819393,
+          author: {
+            id: 321321321,
+            name: 'Gabriel',
+            snapshot_url: 'foto_do_user.jpg'
+          },
           video_url: 'samplelink.mp4',
           story_url: 'address-in-which-the-video-will-be-available',
           story_thumb: 'url-to-img.jpg',
@@ -65,6 +80,11 @@ module.exports = {
       return (
         {
           _id: 283239819393,
+          author: {
+            id: 321321321,
+            name: 'Gabriel',
+            snapshot_url: 'foto_do_user.jpg'
+          },
           video_url: 'samplelink.mp4',
           story_url: 'address-in-which-the-video-will-be-available',
           story_thumb: 'url-to-img.jpg',

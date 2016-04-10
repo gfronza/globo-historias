@@ -2,6 +2,11 @@ module.exports = {
     createStory: function(story) {
         return {
             _id: 283239819393,
+            author: {
+              id: 321321321,
+              name: 'Gabriel',
+              snapshot_url: 'foto_do_user.jpg'
+            },
             video_url: 'samplelink.mp4',
             story_url: 'address-in-which-the-video-will-be-available',
             story_thumb: 'url-to-img.jpg',
@@ -24,6 +29,11 @@ module.exports = {
       //sets the story as approved
       return {
           _id: 283239819393,
+          author: {
+            id: 321321321,
+            name: 'Gabriel',
+            snapshot_url: 'foto_do_user.jpg'
+          },
           video_url: 'samplelink.mp4',
           story_url: 'address-in-which-the-video-will-be-available',
           story_thumb: 'url-to-img.jpg',
@@ -47,6 +57,11 @@ module.exports = {
     banStory: function(story_id) {
       return {
           _id: 283239819393,
+          author: {
+            id: 321321321,
+            name: 'Gabriel',
+            snapshot_url: 'foto_do_user.jpg'
+          },
           video_url: 'samplelink.mp4',
           story_url: 'address-in-which-the-video-will-be-available',
           story_thumb: 'url-to-img.jpg',
@@ -71,6 +86,11 @@ module.exports = {
       //sets the story as approved
       return {
           _id: 283239819393,
+          author: {
+            id: 321321321,
+            name: 'Gabriel',
+            snapshot_url: 'foto_do_user.jpg'
+          },
           video_url: 'samplelink.mp4',
           story_url: 'address-in-which-the-video-will-be-available',
           story_thumb: 'url-to-img.jpg',
@@ -94,6 +114,11 @@ module.exports = {
     reactToStoryForActivity: function(activity_id, story_id, reaction) {
       return {
         _id: 283239819393,
+        author: {
+          id: 321321321,
+          name: 'Gabriel',
+          snapshot_url: 'foto_do_user.jpg'
+        },
         video_url: 'samplelink.mp4',
         story_url: 'address-in-which-the-video-will-be-available',
         story_thumb: 'url-to-img.jpg',
