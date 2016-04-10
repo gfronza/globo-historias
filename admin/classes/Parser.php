@@ -6,7 +6,7 @@ class Parser{
 		$headers = array('Content-Type' => 'application/json');
 		$response = Requests::post($url, $headers, json_encode($paramsArray));		
 		$json_string = json_encode($response->body, JSON_PRETTY_PRINT);
-		var_dump($paramsArray);
+
 		return json_decode($response->body, true);
 
 	}

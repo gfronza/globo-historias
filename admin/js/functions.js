@@ -10,6 +10,7 @@ $(document).ready(function(){
 	});
 
 	$('.approve').click(function() {
+		alert('oi');
 		var idActive = $(this).data('idactive');
 		var idStory = $(this).data('idstory');
 		$('#media').load('midia.php?id=' + idActive + '&story_id=' + idStory + '&action=approve');

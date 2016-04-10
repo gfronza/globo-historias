@@ -15,7 +15,7 @@ module.exports = {
             matched: true,
             matched_activities: [],
             banned: false,
-            reviewed: true,
+            reviewed: false,
             reactions: {
               like: 4,
               sad: 2,
@@ -44,7 +44,7 @@ module.exports = {
             {activity_id: 321362138921973, approved: true}
           ],
           banned: false,
-          reviewed: true,
+          reviewed: false,
           reactions: {
             like: 4,
             sad: 2,
@@ -72,7 +72,7 @@ module.exports = {
             {activity_id: 321362138921973, approved: true}
           ],
           banned: true,
-          reviewed: true,
+          reviewed: false,
           reactions: {
             like: 4,
             sad: 2,
@@ -101,7 +101,7 @@ module.exports = {
             {activity_id: 321362138921973, approved: false}
           ],
           banned: false,
-          reviewed: true,
+          reviewed: false,
           reactions: {
             like: 4,
             sad: 2,
@@ -129,7 +129,7 @@ module.exports = {
           {activity_id: 321362138921973, approved: false}
         ],
         banned: false,
-        reviewed: true,
+        reviewed: false,
         reactions: {
           like: 5,
           sad: 2,
@@ -158,7 +158,7 @@ module.exports = {
             {activity_id: 321362138921973, approved: true}
           ],
           banned: true,
-          reviewed: true,
+          reviewed: false,
           reactions: {
             like: 4,
             sad: 2,
@@ -184,7 +184,7 @@ module.exports = {
           {activity_id: 321362138921973, approved: true}
         ],
         banned: true,
-        reviewed: true,
+        reviewed: false,
         reactions: {
           like: 4,
           sad: 2,

@@ -17,7 +17,7 @@ module.exports = {
           matched: true,
           matched_activities: [],
           banned: false,
-          reviewed: true,
+          reviewed: false,
           reactions: {
             like: 4,
             sad: 2,
@@ -41,7 +41,7 @@ module.exports = {
           matched: true,
           matched_activities: [],
           banned: false,
-          reviewed: true,
+          reviewed: false,
           reactions: {
             like: 4,
             sad: 2,
@@ -65,7 +65,7 @@ module.exports = {
           matched: true,
           matched_activities: [],
           banned: false,
-          reviewed: true,
+          reviewed: false,
           reactions: {
             like: 4,
             sad: 2,
@@ -93,7 +93,7 @@ module.exports = {
           matched: true,
           matched_activities: [],
           banned: false,
-          reviewed: true,
+          reviewed: false,
           reactions: {
             like: 4,
             sad: 2,
