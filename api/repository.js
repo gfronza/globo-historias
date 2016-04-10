@@ -1,4 +1,5 @@
 var MongoClient = require('mongodb').MongoClient;
+var ObjectID = require('mongodb').ObjectID;
 var Promise = require('promise');
 
 function createConnection(cb) {
@@ -42,11 +43,11 @@ module.exports = {
                             var simpleActivities = [];
 
                             activities.forEach(function() {
-                                simpleActivities.push({'activity_id': activity_id, 'approved': false});
+                                simpleActivities.push({'activity_id': new ObjectID(activity_id), 'approved': false});
                             });
 
                             if (simpleActivities.length > 0) {
-                                db.collection('stories').update({'_id': newStory._id}, {
+                                db.collection('stories').update({'_id': new ObjectID(newStory._id)}, {
                                     '$push': {'matched_activities': {'$each': simpleActivities}}
                                 }, function(err, result) {
                                     if (err) {
@@ -89,7 +90,7 @@ module.exports = {
         return new Promise(function (fulfill, reject) {
             createConnection(function(err, db) {
                 db.collection('stories').find({
-                    'matched_activities.$.activity_id': {'$elemMatch': activity_id}
+                    'matched_activities.$.activity_id': {'$elemMatch': new ObjectID(activity_id)}
                 }).toArray(function(err, stories) {
                     if (err) {
                         reject(err);
@@ -107,7 +108,7 @@ module.exports = {
         return new Promise(function (fulfill, reject) {
             createConnection(function(err, db) {
                 db.collection('stories').find({
-                    'matched_activities': {'$elemMatch': {'activity_id': activity_id, 'approved': true}}
+                    'matched_activities': {'$elemMatch': {'activity_id': new ObjectID(activity_id), 'approved': true}}
                 }).toArray(function(err, stories) {
                     if (err) {
                         reject(err);
@@ -124,11 +125,12 @@ module.exports = {
     getStoryById: function(story_id) {
         return new Promise(function (fulfill, reject) {
             createConnection(function(err, db) {
-                db.collection('stories').find({'_id': story_id}).toArray(function(err, story) {
+                db.collection('stories').find({'_id': new ObjectID(story_id)}).toArray(function(err, story) {
                     if (err) {
                         reject(err);
                     }
                     else {
+                        console.log(story);
                         fulfill(story);
                     }
                 });
@@ -140,7 +142,7 @@ module.exports = {
             createConnection(function(err, db) {
                 db.collection('stories').update({
                     '_id': story_id,
-                    'matched_activities.$.activity_id': activity_id
+                    'matched_activities.$.activity_id': new ObjectID(activity_id)
                 }, {
                     '$set': {
                         'matched': true,
@@ -164,7 +166,7 @@ module.exports = {
         return new Promise(function (fulfill, reject) {
             createConnection(function(err, db) {
                 db.collection('stories').update({
-                    '_id': story_id,
+                    '_id': new ObjectID(story_id),
                 }, {
                     '$set': {
                         'reviewed': true,
@@ -189,7 +191,7 @@ module.exports = {
         return new Promise(function (fulfill, reject) {
             createConnection(function(err, db) {
                 db.collection('stories').update({
-                    '_id': story_id,
+                    '_id': new ObjectID(story_id),
                     'matched_activities.$.activity_id': activity_id
                 }, {
                     '$set': {
@@ -214,7 +216,7 @@ module.exports = {
         return new Promise(function (fulfill, reject) {
             createConnection(function(err, db) {
                 db.collection('stories').update({
-                    '_id': story_id,
+                    '_id': new ObjectID(story_id),
                     'matched_activities': {'$elemMatch': {'activity_id': activity_id, 'approved': true}}
                 }, {
                     'reactions.like': {'$inc': reaction.like},
@@ -238,7 +240,7 @@ module.exports = {
     getStoriesByAuthor: function(author_id) {
         return new Promise(function (fulfill, reject) {
             createConnection(function(err, db) {
-                db.collection('stories').find({'author.id': author_id}).toArray(function(err, stories) {
+                db.collection('stories').find({'author.id': new ObjectID(author_id)}).toArray(function(err, stories) {
                     if (err) {
                         reject(err);
                     }
