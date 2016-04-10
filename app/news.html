@@ -86,10 +86,11 @@
           </p>
         </div>
 
-        <div class="globo-historia">
+        <div class="globo-historia" ng-controller="storyCtrl">
           <div class="row">
+            <h5 style="padding-top: 20px">{{stories.length}} Histórias</h5>
             <div class="col s12">
-              <ul class="tabs" ng-controller="storyCtrl">
+              <ul class="tabs">
                 <li class="tab col s3"><a class="active reactions" href="#tab_like"><i class="like"></i> {{(stories|filter:filterLike).length}}</a></li>
                 <li class="tab col s3"><a class="reactions" href="#tab_love"><i class="love"></i> {{(stories|filter:filterLove).length}}</a></li>
                 <li class="tab col s3"><a class="reactions" href="#tab_wow"><i class="wow"></i> {{(stories|filter:filterWow).length}}</a></li>
