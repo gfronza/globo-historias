@@ -2,7 +2,9 @@ var express = require('express');
 var multer = require('multer');
 var fake = require('./fake');
 var repository = require('./repository');
+var videoManager = require('./videoManager');
 var bodyParser = require('body-parser');
+
 var app = express();
 
 // TODO: use nginx to serve static content.
@@ -14,33 +16,15 @@ var jsonParser = bodyParser.json()
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-var storage = multer.diskStorage({
-  destination: function (req, file, callback) {
-    callback(null, './storage');
-  },
-  filename: function (req, file, callback) {
-    callback(null, file.fieldname + '-' + Date.now() + '.mp4');
-  }
-});
-
-var storyVideoUpload = multer({ storage : storage}).single('storyVideo');
-
 // TODO: use nginx to serve static content.
 app.use('/videos', express.static('storage'));
 
 app.route('/composer/create-new-story')
-    .post(function(req, res) {
-        storyVideoUpload(req, res, function(err) {
-            if (err) {
-                res.json({
-                    error: 'Video could not be moved to the storage.'
-                });
-    		}
-    		else {
-                var story = repository.createStory(req.body);
-                res.json(story);
-    		}
-        });
+    .post(urlencodedParser, function(req, res) {
+        var videoFilename = videoManager.saveVideo(req.body.audio, req.body.video);
+        var story = repository.createStory(req.body, videoFilename);
+
+        res.json(story);
     });
 
   app.route('/editor/get-activities')
