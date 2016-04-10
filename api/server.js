@@ -182,6 +182,23 @@ app.route('/composer/create-new-story')
         }
       });
 
+  app.route('/author/stories-by-author-id')
+      .get(function(req, res) {
+        var author_id = req.query.author_id;
+        if (!author_id) {
+          res.send({failure: 'author_id was not sent'});
+          return;
+        } else {
+          var response = repository.storiesByAuthor(author_id);
+          if(response.err){
+            console.log(response.err);
+            res.send(response.err);
+          } else {
+            res.send(response);
+          }
+        }
+      });
+
 app.listen(3000);
 
 console.log("Server is running on port 3000");
