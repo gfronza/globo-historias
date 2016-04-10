@@ -86,29 +86,62 @@
         </div>
 
         <div class="globo-historia">
-          <ul class="globo-historia-list" ng-controller="storyCtrl">
-            <li class="row" ng-repeat="story in stories | orderBy:count_reactions:true">
-              <div class="col s4 m2">
-                <a href="#" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
-              </div>
-              <div class="col s8 m10">
-                <p>
-                  <span class="chip" ng-repeat="tag in tags">{{::story.tag}}</span>
-                </p>
-                <small>
-                  <span><i class="fa fa-clock-o"></i> {{days_from_today(story.time_stamp)}} dias atrás</span>
-                </small>
-
-                <div class="reactions">
-                  <a href="" class="active"><i class="like"></i> <span>{{::story.reactions.like}}</span></a>
-                  <a href=""><i class="love"></i> <span>{{::story.reactions.love}}</span></a>
-                  <a href=""><i class="wow"></i> <span>{{::story.reactions.wow}}</span></a>
-                  <a href=""><i class="sad"></i> <span>{{::story.reactions.sad}}</span></a>
-                  <a href=""><i class="angry"></i> <span>{{::story.reactions.angry}}</span></a>
-                </div>
-              </div>
-            </li>
-          </ul>
+          <div class="row">
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3"><a class="active reactions" href="#tab_like"><i class="like"></i></a></li>
+                <li class="tab col s3"><a class="reactions" href="#tab_love"><i class="love"></i></a></li>
+                <li class="tab col s3"><a class="reactions" href="#tab_wow"><i class="wow"></i></a></li>
+                <li class="tab col s3"><a class="reactions" href="#tab_sad"><i class="sad"></i></a></li>
+                <li class="tab col s3"><a class="reactions" href="#tab_angry"><i class="angry"></i></a></li>
+              </ul>
+            </div>
+            <div id="tab_like" class="col s12">
+              <ul class="globo-historia-list row" ng-controller="storyCtrl">
+                <li ng-repeat="story in stories | orderBy:'reactions.like':true" class="col s4 m2">
+                  <div>
+                    <a href="#" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div id="tab_love" class="col s12">
+              <ul class="globo-historia-list row" ng-controller="storyCtrl">
+                <li class="col s4 m2" ng-repeat="story in stories | orderBy:'reactions.love':true">
+                  <div>
+                    <a href="#" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div id="tab_wow" class="col s12">
+              <ul class="globo-historia-list row" ng-controller="storyCtrl">
+                <li class="col s4 m2" ng-repeat="story in stories | orderBy:'reactions.wow':true">
+                  <div>
+                    <a href="#" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div id="tab_sad" class="col s12">
+              <ul class="globo-historia-list row" ng-controller="storyCtrl">
+                <li class="col s4 m2" ng-repeat="story in stories | orderBy:'reactions.sad':true">
+                  <div>
+                    <a href="#" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div id="tab_angry" class="col s12">
+              <ul class="globo-historia-list row" ng-controller="storyCtrl">
+                <li class="col s4 m2" ng-repeat="story in stories | orderBy:'reactions.angry':true">
+                  <div>
+                    <a href="#" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col s12 m4">
