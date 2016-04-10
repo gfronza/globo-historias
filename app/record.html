@@ -47,11 +47,11 @@
   <div class="section">
     <h4>Gravação</h4>
     <div class="row">
-      <div class="video-area embed-responsive embed-responsive-16by9" ng-controller="cameraCtrl">
+      <div class="video-area" ng-controller="cameraCtrl">
          <!-- here is how you use the module it -->
          <ngcamcecorder configuration="camconfiguration"></ngcamcecorder>
 
-         <div ng-init="camconfiguration.init()" id="initvideo" class="embed-responsive-item"></div>
+         <div ng-init="camconfiguration.init()" id="initvideo"></div>
          <!-- <img ng-src="{{camconfiguration.output.recordingthumb}}" /> -->
       </div>
 
