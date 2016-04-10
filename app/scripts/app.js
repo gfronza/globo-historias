@@ -1,7 +1,17 @@
 var app = angular.module("GloboHistorias" , []);
 
-app.controller("storyCtrl" , function ($scope) {
-  $scope.stories = [{"_id":283239819393,"author":{"id":321321321,"name":"Gabriel","snapshot_url":"foto_do_user.jpg"},"video_url":"samplelink.mp4","story_url":"address-in-which-the-video-will-be-available","story_thumb":"url-to-img.jpg","tags":[],"time_stamp":"1460083693249","matched":true,"matched_activities":[],"banned":false,"reviewed":true,"reactions":{"like":4,"sad":2,"love":3,"angry":1,"wow":0}},{"_id":283239819393,"author":{"id":321321321,"name":"Gabriel","snapshot_url":"foto_do_user.jpg"},"video_url":"samplelink.mp4","story_url":"address-in-which-the-video-will-be-available","story_thumb":"url-to-img.jpg","tags":[],"time_stamp":"1460083693249","matched":true,"matched_activities":[],"banned":false,"reviewed":true,"reactions":{"like":4,"sad":2,"love":3,"angry":2,"wow":0}},{"_id":283239819393,"author":{"id":321321321,"name":"Gabriel","snapshot_url":"foto_do_user.jpg"},"video_url":"samplelink.mp4","story_url":"address-in-which-the-video-will-be-available","story_thumb":"url-to-img.jpg","tags":[],"time_stamp":"1460083693249","matched":true,"matched_activities":[],"banned":false,"reviewed":true,"reactions":{"like":4,"sad":2,"love":3,"angry":2,"wow":0}}];
+app.controller("storyCtrl" , ['$scope', '$http', function($scope, $http){
+  //$scope.stories = [{"_id":283239819393,"author":{"id":321321321,"name":"Gabriel","snapshot_url":"foto_do_user.jpg"},"video_url":"samplelink.mp4","story_url":"address-in-which-the-video-will-be-available","story_thumb":"url-to-img.jpg","tags":[],"time_stamp":"1460083693249","matched":true,"matched_activities":[],"banned":false,"reviewed":true,"reactions":{"like":4,"sad":2,"love":3,"angry":1,"wow":0}},{"_id":283239819393,"author":{"id":321321321,"name":"Gabriel","snapshot_url":"foto_do_user.jpg"},"video_url":"samplelink.mp4","story_url":"address-in-which-the-video-will-be-available","story_thumb":"url-to-img.jpg","tags":[],"time_stamp":"1460083693249","matched":true,"matched_activities":[],"banned":false,"reviewed":true,"reactions":{"like":4,"sad":2,"love":3,"angry":2,"wow":0}},{"_id":283239819393,"author":{"id":321321321,"name":"Gabriel","snapshot_url":"foto_do_user.jpg"},"video_url":"samplelink.mp4","story_url":"address-in-which-the-video-will-be-available","story_thumb":"url-to-img.jpg","tags":[],"time_stamp":"1460083693249","matched":true,"matched_activities":[],"banned":false,"reviewed":true,"reactions":{"like":4,"sad":2,"love":3,"angry":2,"wow":0}}];
+  $scope.stories = [];
+  var webserviceIP = window.api_url;
+  $http.get(webserviceIP + '/widget/get-stories-by-activity-id?activity_id=321362138921973')
+    .success(function(data) {
+        $scope.stories = data;
+        console.log(data);
+    })
+    .error(function(data) {
+        console.log('Error: ' + data);
+  });
 
   $scope.days_from_today = function(timestamp){
     var now = new Date().getTime();
@@ -14,11 +24,11 @@ app.controller("storyCtrl" , function ($scope) {
     var count = story.reactions.like + story.reactions.love + story.reactions.wow + story.reactions.sad + story.reactions.angry;
     return count;
   }
-});
+}]);
 
 var app = angular.module("GloboHistoriasRec" , ['ngCamRecorder']);
 
-app.controller("testcontroller" , function ($scope) {
+app.controller("cameraCtrl" , ['$scope', function($scope){
     var configuration  = {
             init : $scope.initiateRecord,
             recConf:{
@@ -51,4 +61,4 @@ app.controller("testcontroller" , function ($scope) {
             }
     }
 	$scope.camconfiguration = configuration;
-});
+}]);
