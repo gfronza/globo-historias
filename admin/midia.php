@@ -3,13 +3,38 @@ require_once 'vendor/autoload.php';
 require_once 'classes/Parser.php';
 require_once 'classes/Story.php';
 if (isset($_GET['id'])) {
-	$id = $_GET['id'];
-	if (isset($_GET['action'])) {
 
+	$id = $_GET['id'];
+	if(isset($_GET['action'])){
+		$storyId = $_GET['story_id'];
+		switch ($_GET['action']) {
+			case 'approve':
+				Story::approveStory($id, $storyId);
+				array_splice($_SESSION['stories'], 0, 1);
+				break;
+			case 'ban':
+				Story::banStory($id);
+				array_splice($_SESSION['stories'], 0, 1);
+				break;
+			case 'deny':
+				Story::denyStory($id, $storyId);
+				array_splice($_SESSION['stories'], 0, 1);
+				break;								
+			default:
+				break;
+		}
 	}
 
-	$stories = Story::getStoriesByActivityId($id);
+	if(!isset($_SESSION['stories'])){
+		$stories = Story::getStoriesByActivityId($id);
+		$_SESSION['stories'] = $stories;
+	}
+	else{
+		$stories = $_SESSION['stories'];
+	}
+	
 	?>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
 	<div class="container ">
 		<div class="section">
 			<div class="row">
@@ -21,6 +46,7 @@ if (isset($_GET['id'])) {
 	<?php
 	for($j=0; $j<count($stories); $j++){
 		$story = $stories[$j];
+
 		if($j == 0){
 			?>
 			<div class="col s12 m9">
@@ -33,7 +59,9 @@ if (isset($_GET['id'])) {
 				</div>
 				<br>
 				<div class="center">
-					<a class="waves-effect waves-light btn red"><i class="material-icons right">close</i>Banir</a> | <a class="waves-effect waves-light btn grey"><i class="material-icons right">error_outline</i>Rejeitar</a> | <a class="waves-effect waves-light btn green"><i class="material-icons right">done</i>Aceitar</a>
+					<a data-idactive="<?php echo $id?>"data-idstory="<?php echo $story->id?>" class="waves-effect waves-light btn red ban"><i class="material-icons right">close</i>Banir</a> | 
+					<a data-idactive="<?php echo $id?>"data-idstory="<?php echo $story->id?>" class="waves-effect waves-light btn grey deny"><i class="material-icons right">error_outline</i>Rejeitar</a> | 
+					<a data-idactive="<?php echo $id?>"data-idstory="<?php echo $story->id?>" class="waves-effect waves-light btn green approve"><i class="material-icons right">done</i>Aceitar</a>
 				</div>
 			</div>
 			<?php
