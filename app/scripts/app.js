@@ -58,7 +58,7 @@ app.controller("storyCtrl" , ['$scope', '$http', function($scope, $http){
     }
   }
 
-  $scope.filterWow = function(story){
+  $scope.filterSad = function(story){
     var item = story;
     var isSad = item.reactions.sad >= item.reactions.live &&
     item.reactions.sad >= item.reactions.love &&
@@ -69,7 +69,7 @@ app.controller("storyCtrl" , ['$scope', '$http', function($scope, $http){
     }
   }
 
-  $scope.filterWow = function(story){
+  $scope.filterAngry = function(story){
     var item = story;
     var isAngry = item.reactions.angry >= item.reactions.live &&
     item.reactions.angry >= item.reactions.love &&
@@ -81,7 +81,7 @@ app.controller("storyCtrl" , ['$scope', '$http', function($scope, $http){
   }
 
   $scope.abrirVideo = function(video) {
-    var player = new Clappr.Player({source: video, parentId: "#player"});
+    var player = new Clappr.Player({source: video, parentId: "#player", autoPlay: true});
     // alert(video);
   };
 }]);
