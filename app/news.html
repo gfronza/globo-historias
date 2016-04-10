@@ -100,7 +100,7 @@
               <ul class="globo-historia-list row" ng-controller="storyCtrl">
                 <li ng-repeat="story in stories | orderBy:'reactions.like':true | filter:filterLike as count" class="col s4 m2">
                   <div>
-                    <a href="#" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                    <a ng-href="{{::story.video_url}}" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
                   </div>
                 </li>
               </ul>
@@ -109,7 +109,7 @@
               <ul class="globo-historia-list row" ng-controller="storyCtrl">
                 <li class="col s4 m2" ng-repeat="story in stories | orderBy:'reactions.love':true | filter:filterLove">
                   <div>
-                    <a href="#" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                    <a ng-href="{{::story.video_url}}" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
                   </div>
                 </li>
               </ul>
@@ -118,7 +118,7 @@
               <ul class="globo-historia-list row" ng-controller="storyCtrl">
                 <li class="col s4 m2" ng-repeat="story in stories | orderBy:'reactions.wow':true | filter:filterWow">
                   <div>
-                    <a href="#" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                    <a ng-href="{{::story.video_url}}" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
                   </div>
                 </li>
               </ul>
@@ -127,7 +127,7 @@
               <ul class="globo-historia-list row" ng-controller="storyCtrl">
                 <li class="col s4 m2" ng-repeat="story in stories | orderBy:'reactions.sad':true | filter:filterSad">
                   <div>
-                    <a href="#" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                    <a ng-href="{{::story.video_url}}" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
                   </div>
                 </li>
               </ul>
@@ -136,7 +136,7 @@
               <ul class="globo-historia-list row" ng-controller="storyCtrl">
                 <li class="col s4 m2" ng-repeat="story in stories | orderBy:'reactions.angry':true | filter:filterAngry">
                   <div>
-                    <a href="#" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
+                    <a ng-href="{{::story.video_url}}" class="open-modal"><img ng-src="{{::story.story_thumb}}" class="img-responsive"></a>
                   </div>
                 </li>
               </ul>
@@ -161,7 +161,7 @@
   </footer>
 
   <div id="media">
-    <div class="container">
+    <div class="">
       <div class="section">
         <div class="row">
           <div class="col s12 l9">

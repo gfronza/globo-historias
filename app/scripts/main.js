@@ -3,11 +3,7 @@ window.api_url = "http://localhost:3000";
 $(document).ready(function () {
   $(".button-collapse").sideNav();
 
-  //Open modal
-  $('.open-modal').click(function() {
-    $('#media').fadeIn(600);
-    $(this).preventDefault();
-  });
+
 
   //Close Modal com Esc
   $(document).keyup(function(e) {
@@ -19,7 +15,11 @@ $(document).ready(function () {
 
 //iphone carousel animation
 $(window).load(function () {
-
+  //Open modal
+  $('.open-modal').click(function() {
+    $('#media').fadeIn(600);
+    $(this).preventDefault();
+  });
 });
 
 $(document).ready(function () {
