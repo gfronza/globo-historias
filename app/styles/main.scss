@@ -37,6 +37,21 @@ body {
   padding: 0 15px;
 }
 
+.story {
+  .story-summary-container {
+    display: inline-block;
+    // .story-snaphot {
+    //   width: 160px;
+    //   display: inline-block;
+    // }
+    .thumbnail {
+      max-width: 100%;
+    }
+    .tags-container {
+      display: inline;
+    }
+  }
+}
 
 .globo-historia {
   &-list {
