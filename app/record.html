@@ -42,31 +42,27 @@
   </div>
 
   <div id="media">
-    <div class="container">
-      <div class="section form center">
+    <div class="">
+      <div class="section center">
         <div class="row">
-          <h4>Finalizar Post</h4>
-          <p>Adicione tags ao seu vídeo:</p>
-          <div class="divider"></div>
-
-          <div class="input-field col s12">
-            <input placeholder="Placeholder" id="tag_name" type="text" class="validate">
-            <label for="first_name">Inserir Tags</label>
-            <button id="add-tag" class="btn wave yellow">Adicionar <i class="fa fa-plus"></i></button>
+          <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">A dicione tags ao seu vídeo:</span>
+                <div class="input-field col s12">
+                  <input placeholder="#ExemploDeHashtag" id="tag_name" type="text" class="center">
+                </div>
+                <br />
+                <br />
+                <ul id="chips">
+                </ul>
+              </div>
+              <div class="card-action">
+                <button id="add-tag" class="waves-effect btn-flat red">Adicionar <i class="fa fa-plus"></i></button>
+                <button class="btn btn-lg red send-modal">Enviar Tags <i class="fa fa-send"></i></button>
+              </div>
+            </div>
           </div>
-          <br />
-          <br />
-          <ul id="chips">
-            <!--
-            <li class="chip">
-              tag 1
-              <i class="fa fa-close material-icons"></i>
-            </li>
-            -->
-          </ul>
-        </div>
-        <div class="row">
-          <button class="btn btn-lg blue send-modal"><i class="fa fa-success"></i> Enviar Tags</button>
         </div>
       </div>
     </div>
