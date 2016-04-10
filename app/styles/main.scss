@@ -10,9 +10,21 @@ $icon-font-path: '../fonts/';
 
 body {
   font-size: 16px;
-
   a {
     color: #ee3d40;
+  }
+}
+
+.menu-option-list {
+  position: absolute;
+  top: 35px;
+  left: 25px;
+  color: black;
+  z-index: 99;
+  .stories {
+    background-color: white;
+    border-radius: 3px;
+    padding: 4px;
   }
 }
 

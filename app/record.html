@@ -29,21 +29,16 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
+  <body ng-controller="cameraCtrl">
+  <div class="menu-option-list" ng-click="onClickStories()"> <span class="stories">Histórias</span> </div>
+  <div class="row">
+    <div class="video-area" ng-controller="cameraCtrl">
+       <!-- here is how you use the module it -->
+       <ngcamcecorder configuration="camconfiguration"></ngcamcecorder>
 
-  <div class="section">
-    <div class="row">
-      <div class="video-area" ng-controller="cameraCtrl">
-         <!-- here is how you use the module it -->
-         <ngcamcecorder configuration="camconfiguration"></ngcamcecorder>
-
-         <div ng-init="camconfiguration.init()" id="initvideo"></div>
-         <!-- <img ng-src="{{camconfiguration.output.recordingthumb}}" /> -->
-      </div>
-
+       <div ng-init="camconfiguration.init()" id="initvideo"></div>
+       <!-- <img ng-src="{{camconfiguration.output.recordingthumb}}" /> -->
     </div>
-
-    <div class="divider"></div>
   </div>
 
   <div id="media">
