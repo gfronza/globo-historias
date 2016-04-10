@@ -130,7 +130,6 @@ module.exports = {
                         reject(err);
                     }
                     else {
-                        console.log(story);
                         fulfill(story);
                     }
                 });

@@ -35,14 +35,17 @@ app.route('/composer/create-new-story')
 
         var savedVideo = videoManager.saveVideo(audioBase64, videoBase64);
 
+        var protocol = req.protocol;
+        var mediaPrefix = protocol + '://' + req.headers.host;
+
         newStory.author = {
           id: 123,
           name: 'MagicUser',
-          snapshot_url: '/vagrant/storage/ut_magicuser.png'
+          snapshot_url: mediaPrefix + MEDIA_URL + '/ut_magicuser.png'
         };
 
-        newStory.video_url = MEDIA_URL + '/' + savedVideo.videoFilename;
-        newStory.story_thumb = MEDIA_URL +'/' + savedVideo.videoThumb;
+        newStory.video_url = mediaPrefix + MEDIA_URL + '/' + savedVideo.videoFilename;
+        newStory.story_thumb = mediaPrefix + MEDIA_URL +'/' + savedVideo.videoThumb;
         newStory.story_url = new Date().getTime().toString();
         newStory.time_stamp = new Date().getTime();
         newStory.matched = false;
