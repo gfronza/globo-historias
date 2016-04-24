@@ -23,8 +23,8 @@ O app permite que pessoas de qualquer lugar, em qualquer momento, possam contar 
 - [Richard Duchatsch Johansen](http://linkedin.com/in/ridjohansen)
 
 ## Screenshots
-<p align="center"><img src="https://raw.githubusercontent.com/gfronza/globo-historias/master/screenshots/001.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/ArthurAssuncao/globo-historias/master/screenshots/001.png"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/gfronza/globo-historias/master/screenshots/002.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/ArthurAssuncao/globo-historias/master/screenshots/002.png"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/gfronza/globo-historias/master/screenshots/003.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/ArthurAssuncao/globo-historias/master/screenshots/003.png"></p>
