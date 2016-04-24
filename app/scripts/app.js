@@ -87,7 +87,8 @@ app.controller("storyCtrl" , ['$scope', '$http', function($scope, $http){
   }
 
   $scope.abrirVideo = function(video) {
-    var player = new Clappr.Player({source: video, parentId: "#player", autoPlay: true});
+    $("#player").html("");
+    var  = new Clappr.Player({source: video, parentId: "#player", autoPlay: true});
     $scope.video_run = video;
     // alert(video);
   };
